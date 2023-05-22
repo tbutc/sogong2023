@@ -1,6 +1,7 @@
 // 헤더 선언
 #include <stdio.h>
 #include <string.h>
+#include <string>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ using namespace std;
 
 // 함수 선언
 void doTask();
-void join();
+void SignUp();
 void program_exit();
 
 // 변수 선언
@@ -44,13 +45,12 @@ void doTask()
             switch (menu_level_2)
             {
             case 1: // "1.1. 회원가입“ 메뉴 부분
-            {
-                // join() 함수에서 해당 기능 수행 
-                join();
+            { 
+                SignUp();
 
                 break;
             }
-            case 2:
+            case 2: // "1.2. 회원탈퇴"
             {
 
                 break;
@@ -61,9 +61,14 @@ void doTask()
         {
             switch (menu_level_2)
             {
-            case 1: // 2.1
-            {
-            }
+                case 1: // "2.1. 로그인"
+                {
+
+                }
+                case 2: // "2.2. 로그아웃"
+                {
+
+                }
             }
         }
 
@@ -85,15 +90,41 @@ return;
 }
 
 
-void join()
+/*************/
+/***entity****/
+/*************/
+
+
+struct User {   
+    private :
+        string id[MAX_STRING];
+        string pwd[MAX_STRING];
+        string name[MAX_STRING];
+    public :
+        
+};
+
+
+
+
+/*************/
+/*************/
+
+void SignUpUI() // 회원가입 boundary
 {
     char user_type[MAX_STRING], name[MAX_STRING], SSN [MAX_STRING],address[MAX_STRING], ID[MAX_STRING], password[MAX_STRING];
 
     // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
     fscanf(in_fp, "%s %s %s %s", name, SSN, ID, password);
 
+    void SignUp();
+
     fprintf(out_fp, "1.1. 회원가입\n");
     fprintf(out_fp, "%s %s %s %s\n", name, SSN, ID, password);
+}
+
+void SignUp() { // 회원가입 control
+
 }
 
 
