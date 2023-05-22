@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+#include "ListJobPostingUI.h"
 
 using namespace std;
 
@@ -144,6 +145,22 @@ void doTask()
             }
         }
 
+        case 3:
+        {
+            switch (menu_level_2)
+            {
+            case 1: // "3.1. 채용 정보 등록"
+            {
+
+            }
+            case 2: // "3.2. 등록된 채용 정보 조회"
+            {
+                //회사이름과 vector<JobPosting> 인자로 받아야 함
+                startinterface(user.getname(), jobPostings); 
+            }
+            }
+        }
+                
         case 7:
         {
             switch (menu_level_2)
