@@ -69,16 +69,44 @@ void doTask()
             break;
           }
       }
-      ....
+      case 2 :
+      {
+          switch(menu_level_2)
+        {
+          case 1:
+      }
+      case 3 :
+      {
+          switch(menu_level_2)
+        {
+          case 1:
+      }
+      case 4 :
+      {
+          switch(menu_level_2)
+        {
+          case 1:
+      }
+      case 5 :
+      {
+          switch(menu_level_2)
+        {
+          case 1:
+      }
+      case 6 :
+      {
+          switch(menu_level_2)
+        {
+          case 1:
+      }
       case 7:
       {
         switch(menu_level_2)
         {
           case 1:   // "6.1. 종료“ 메뉴 부분
           {
-   ..
             program_exit();
-         is_program_exit = 1;
+            is_program_exit = 1;
             break;;
           }        
       }
