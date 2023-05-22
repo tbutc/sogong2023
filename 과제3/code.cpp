@@ -1,6 +1,8 @@
 // 헤더 선언
 #include <stdio.h>
 #include <string.h>
+
+using namespace std;
  
 // 상수 선언
 #define MAX_STRING 32
