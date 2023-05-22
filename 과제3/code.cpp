@@ -52,11 +52,11 @@ void doTask()
     // 메뉴 구분 및 해당 연산 수행
     switch(menu_level_1)
     {
-      case 1:
+      case 1 :
       {
         switch(menu_level_2)
         {
-          case 1:   // "1.1. 회원가입“ 메뉴 부분
+          case 1 :   // "1.1. 회원가입“ 메뉴 부분
           {
          // join() 함수에서 해당 기능 수행 
             join();
