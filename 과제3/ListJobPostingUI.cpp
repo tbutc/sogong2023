@@ -1,4 +1,4 @@
-#include "ListJobPostingUI.h"
+ï»¿#include "ListJobPostingUI.h"
 
 ListJobPostingUI::ListJobPostingUI() {}
 
@@ -7,7 +7,7 @@ void ListJobPostingUI::startinterface(string* const cn, vector<JobPosting> jobPo
 	ListJobPosting listjobposting;
 	vector<JobDetail> details = listjobposting.showJobPosting(cn, jobPostings);
 
-    cout << "3.2. µî·ÏµÈ Ã¤¿ë Á¤º¸ Á¶È¸ \n> ";
+    cout << "3.2.ã…‡ã…‡ \n> ";
 
     for (auto& detail : details)
     {

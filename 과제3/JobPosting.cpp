@@ -1,11 +1,11 @@
-#include "JobPosting.h"
+﻿#include "JobPosting.h"
 
-JobPosting::JobPosting(string* const cn, string jt, int al, struct Date dl)
+JobPosting::JobPosting(string* const cn, JobDetail jd)
     : companyname(cn)
 {
-    jobdetail.JobTitle = jt;
-    jobdetail.applicantLimit = al;
-    jobdetail.deadline = dl;
+    jobdetail.JobTitle = jd.JobTitle;
+    jobdetail.applicantLimit = jd.applicantLimit;
+    jobdetail.deadline = jd.deadline;
 }
 
 

@@ -1,4 +1,4 @@
-#include <string>
+﻿#include <string>
 #include <ctime>
 
 using namespace std;
@@ -22,7 +22,7 @@ private:
     struct JobDetail jobdetail;
 
 public:
-    JobPosting(string* const cn, string jt, int al, Date dl);
+    JobPosting(string* const cn, JobDetail jd);
     const string* getJobPostingcname() const;
     JobDetail getJobPostingDetail() const;
 };
