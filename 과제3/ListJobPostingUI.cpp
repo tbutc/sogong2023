@@ -7,7 +7,7 @@ void ListJobPostingUI::startinterface(string* const cn, vector<JobPosting> jobPo
 	ListJobPosting listjobposting;
 	vector<JobDetail> details = listjobposting.showJobPosting(cn, jobPostings);
 
-    cout << "3.2.ㅇㅇ \n> ";
+    cout << "3.2.등록된 채용 정보 조회 \n> ";
 
     for (auto& detail : details)
     {
