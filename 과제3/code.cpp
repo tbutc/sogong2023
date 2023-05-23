@@ -13,82 +13,11 @@ using namespace std;
 
 // 함수 선언
 void doTask();
-void SignUp();
 void program_exit();
 
 // 변수 선언
 FILE* in_fp, *out_fp;
 
-
-
-/*************/
-/***entity****/
-/*************/
-
-
-struct User {   
-    private :
-        string id;
-        string pwd;
-        string name;
-        string SSN;
-    public :
-        User(string id, string pwd, string, string SSN) {
-            id = this->id; 
-            pwd = this->pwd;
-            name = this->pwd;
-            SSN = this->SSN;
-        }
-};
-
-
-/*************/
-/*************/
-
-int LogStatus = 0; // 로그인 상태 전역 변수
-
-
-
-class SignUp // 회원가입 control
-{
-public:
-    void showResult() {
-        
-    }
-    
-};
-
-class SignUpUI // 회원가입 boundary
-{
-private:
-
-public:
-    void startInterface() {
-        fprintf(out_fp, "1.1. 회원가입\n");
-    }
-
-    int signup() {
-        string id, pwd, name, SSN;
-        // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
-        fscanf(in_fp, "%s %s %s %s", name, SSN, id, pwd);
-
-        User newUser = User(name, SSN, id, pwd);
-
-        //showResult 호출
-
-        fprintf(out_fp, "%s %s %s %s\n", name, SSN, id, pwd);
-        return 1;
-    }
-};
-
-void program_exit() {
-
-}
-
-
-/*************/
-/****main*****/
-/*************/
 
 
 int main()
@@ -155,13 +84,43 @@ void doTask()
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
             {
-                //회사이름과 vector<JobPosting> 인자로 받아야 함
-                startinterface(user.getname(), jobPostings); 
+               
             }
             }
         }
+
+        case 4:
+        {
+            switch (menu_level_2)
+            {
+            case 1:
+            {
+
+            }
+            case 2:
+            {
+
+            }
+            }
+        }
+
+        case 5:
+        {
+            switch (menu_level_2)
+            {
+            case 1:
+            {
+
+            }
+            case 2:
+            {
+
+            }
+            }
+        }
+
                 
-        case 7:
+        case 6:
         {
             switch (menu_level_2)
             {
