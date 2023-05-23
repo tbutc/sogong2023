@@ -84,7 +84,7 @@ void doTask()
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
             {
-               
+               ListJobPostingUI().startinterface(user.getname(), jobPostings);
             }
             }
         }
