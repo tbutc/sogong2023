@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+#include <vector>
 #include "ListJobPostingUI.h"
 
 using namespace std;
@@ -35,6 +36,9 @@ void doTask()
 {
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
+    
+    vector <User> user_list;
+    
     while (!is_program_exit)
     {
         // 입력파일에서 메뉴 숫자 2개를 읽기
