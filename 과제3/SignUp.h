@@ -6,6 +6,8 @@
 
 #include "User.h"
 
+using namespace std;
+
 class SignUp // 회원가입 control
 {
 public:

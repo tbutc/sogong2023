@@ -1,4 +1,6 @@
 #pragma
+#include "User.h"
+
 class SignUpUI // 회원가입 boundary
 {
 private:
