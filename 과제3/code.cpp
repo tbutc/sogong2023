@@ -48,8 +48,11 @@ void doTask()
             {
             case 1: // "1.1. 회원가입“ 메뉴 부분
             {
-                signup();
+                SignUpUI a;
 
+                a.startInterface(); // 1.startInterface
+                user_list.push_back( a.signup() ); // 2.signup // 2.1. showResult // user_list vector에 새로 회원가입한 user 추가
+                
                 break;
             }
             case 2: // "1.2. 회원탈퇴"
