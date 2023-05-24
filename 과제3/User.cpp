@@ -16,3 +16,7 @@ string User::getname() const {
 string User::getssn() const {
     return this->SSN;
 }
+
+string User::getid() const{
+    return this->id;
+}
