@@ -8,3 +8,7 @@ using namespace std;
 bool User :: GetCorrespond() {
     return true;
 }
+
+string getname(){
+    return this->name;
+}
