@@ -9,6 +9,6 @@ bool User :: GetCorrespond() {
     return true;
 }
 
-string getname(){
+string User :: getname(){
     return this->name;
 }
