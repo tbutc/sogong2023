@@ -18,7 +18,7 @@ public:
 
     string getname() const;
     string getssn() const;
-    string getname() const;
+    string getid() const;
 
     User(int UserType, string name, string SSN, string id, string pwd) {
         this->UserType = UserType;
