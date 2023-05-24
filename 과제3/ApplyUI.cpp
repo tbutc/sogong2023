@@ -11,17 +11,11 @@ ApplyUI::ApplyUI() {}
 
 void ApplyUI::showInterface() {
     ofstream outputFile("output.txt", ios::app);
-    string message = "4.2. ì±„ìš© ì§€ì›\n> ";
+    string message = "4.2. Ã¤¿ë Áö¿ø\n> ";
     outputFile << message;
     outputFile.close();
 }
 
-void ApplyUI::ApplyRequest() {
-  
-
-    
-}
-
 void ApplyUI::showResult() {
-
+    
 }
