@@ -1,7 +1,7 @@
 ﻿#include "JobPosting.h"
 
-JobPosting::JobPosting(string* const cn, JobDetail jd)
-    : companyname(cn)
+JobPosting::JobPosting(string* const cn, int* const ssn, JobDetail jd)
+    : companyname(cn), ssn(ssn)
 {
     jobdetail.JobTitle = jd.JobTitle;
     jobdetail.applicantLimit = jd.applicantLimit;
@@ -14,6 +14,5 @@ const string* JobPosting:: getJobPostingcname() const{
 }
 
 JobDetail JobPosting:: getJobPostingDetail() const{
-    // Implementation here
     return jobdetail;
 }

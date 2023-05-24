@@ -19,10 +19,11 @@ struct JobDetail {
 class JobPosting {
 private:
     string* const companyname;
+    int* const ssn;
     struct JobDetail jobdetail;
 
 public:
-    JobPosting(string* const cn, JobDetail jd);
+    JobPosting(string* const cn, int* const ssn, JobDetail jd);
     const string* getJobPostingcname() const;
     JobDetail getJobPostingDetail() const;
 };
