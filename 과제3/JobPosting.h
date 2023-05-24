@@ -25,5 +25,7 @@ private:
 public:
     JobPosting(string* const cn, int* const ssn, JobDetail jd);
     const string* getJobPostingcname() const;
+    const int* getJobPostingssn() const;
+
     JobDetail getJobPostingDetail() const;
 };

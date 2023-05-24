@@ -13,6 +13,11 @@ const string* JobPosting:: getJobPostingcname() const{
     return companyname;
 }
 
+const int* JobPosting:: getJobPostingssn() const{
+    return ssn;
+}
+
+
 JobDetail JobPosting:: getJobPostingDetail() const{
     return jobdetail;
 }
