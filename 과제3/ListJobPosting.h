@@ -1,6 +1,7 @@
 ﻿#include <string>
 #include <vector>
 #include "JobPosting.h"
+#include "ListJobPostingUI.h"
 
 using namespace std;
 

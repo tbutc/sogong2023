@@ -17,7 +17,6 @@ JobPosting::JobPosting(string cn, string ssn, JobDetail jd)
     return ssn;
 }
 
-
 JobDetail JobPosting:: getJobPostingDetail() {
     return jobdetail;
 }

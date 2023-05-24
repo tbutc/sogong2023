@@ -10,12 +10,7 @@ void ListJobPostingUI::startinterface(vector<JobDetail> details)
     string str = "3.2.등록된 채용 정보 조회 \n> ";
     writeFile.write(str.c_str(), str.size());
 
-
-	ListJobPosting listjobposting;
-
     cout << "3.2.등록된 채용 정보 조회 \n> ";
-
-
 
 
     for (auto detail : details)

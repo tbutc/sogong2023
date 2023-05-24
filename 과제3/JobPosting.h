@@ -26,6 +26,5 @@ public:
     JobPosting(string cn, string ssn, JobDetail jd);
      string getJobPostingcname() ;
      string getJobPostingssn() ;
-
     JobDetail getJobPostingDetail() ;
 };
