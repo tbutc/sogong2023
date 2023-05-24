@@ -28,10 +28,6 @@ FILE* in_fp, *out_fp;
 
 int main()
 {
-    // 파일 입출력을 위한 초기화
-    //FILE* in_fp = fopen(INPUT_FILE_NAME, "r + ");
-    //FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
-
     doTask();
 
     return 0;
@@ -46,15 +42,9 @@ void doTask()
 
     while (!is_program_exit)
     {
-        // 입력파일에서 메뉴 숫자 2개를 읽기
-        //fscanf(in_fp, "%d %d ", &menu_level_1, &menu_level_2);
-         
         ifstream inputFile("input.txt");
         inputFile >> menu_level_1;
         inputFile >> menu_level_2;
-        inputFile.close();
-
-        
 
 
         // 메뉴 구분 및 해당 연산 수행
@@ -69,7 +59,7 @@ void doTask()
                 SignUpUI a;
 
                 a.startInterface(); // 1.startInterface
-                user_list.push_back( a.signup() ); // 2.signup // 2.1. showResult // user_list vector에 새로 회원가입한 user 추가
+                user_list.push_back( a.signup(inputFile) ); // 2.signup // 2.1. showResult // user_list vector에 새로 회원가입한 user 추가
 
                 break;
             }

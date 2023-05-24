@@ -12,7 +12,7 @@ using namespace std;
 
 void SignUpUI::startInterface() {
 
-    ofstream outputFile("output.txt");
+    ofstream outputFile("output.txt", ios::app);
 
     string message = "1.1. 회원가입 \n> ";
     outputFile << message;
@@ -21,11 +21,9 @@ void SignUpUI::startInterface() {
 }
 
 
-User SignUpUI::signup(){
+User SignUpUI::signup(ifstream& inputFile){
     string id, pwd, name, SSN;
     int type;
-
-    ifstream inputFile("input.txt");
 
     inputFile >> type;
     inputFile >> name;
@@ -40,7 +38,7 @@ User SignUpUI::signup(){
     SignUp a;
     User newUser = a.showResult(type, name, SSN, id, pwd);
 
-    ofstream outputFile("output.txt");
+    ofstream outputFile("output.txt", ios::app);
     outputFile << type << ' ';
     outputFile << name << ' ';
     outputFile << SSN << ' ';

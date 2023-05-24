@@ -8,5 +8,5 @@ private:
 public:
     void startInterface();
 
-    User signup();
+    User signup(ifstream& inputFile);
 };
