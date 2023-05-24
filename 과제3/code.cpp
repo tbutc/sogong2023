@@ -6,9 +6,11 @@
 #include <fstream>
 
 #include "ListJobPostingUI.h"
+
 #include "User.h"
-#include "SignUpUI.h"
-#include "LoginUI.h"
+#include "SignUp.h"
+#include "Login.h"
+#include "LogStatus.h"
 
 
 using namespace std;
@@ -40,6 +42,7 @@ void doTask()
     int is_program_exit = 0;
 
     vector <User> user_list;
+    LogStatus logstatus;
 
     while (!is_program_exit)
     {
@@ -57,10 +60,8 @@ void doTask()
             {
             case 1: // "1.1. 회원가입“ 메뉴 부분
             {
-                SignUpUI a;
-
-                a.startInterface(); // 1.startInterface
-                user_list.push_back( a.signup(inputFile) ); // 2.signup // 2.1. showResult // user_list vector에 새로 회원가입한 user 추가
+                SignUp a;
+                user_list.push_back(a.join(inputFile));
 
                 break;
             }
@@ -77,9 +78,8 @@ void doTask()
             {
             case 1: // "2.1. 로그인"
             {
-                LoginUI a;
-                a.startInterface();
-                a.LoginRequest(inputFile);
+                Login a;
+                a.log_in(inputFile, &user_list);
             }
             case 2: // "2.2. 로그아웃"
             {
