@@ -3,7 +3,12 @@
 #include <string.h>
 #include <string>
 #include <vector>
+#include <fstream>
+
 #include "ListJobPostingUI.h"
+#include "User.h"
+#include "SignUpUI.h"
+
 
 using namespace std;
 
@@ -24,8 +29,8 @@ FILE* in_fp, *out_fp;
 int main()
 {
     // 파일 입출력을 위한 초기화
-    FILE* in_fp = fopen(INPUT_FILE_NAME, "r + ");
-    FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
+    //FILE* in_fp = fopen(INPUT_FILE_NAME, "r + ");
+    //FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
     doTask();
 
@@ -36,13 +41,22 @@ void doTask()
 {
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
-    
+
     vector <User> user_list;
-    
+
     while (!is_program_exit)
     {
         // 입력파일에서 메뉴 숫자 2개를 읽기
-        fscanf(in_fp, "%d %d ", &menu_level_1, &menu_level_2);
+        //fscanf(in_fp, "%d %d ", &menu_level_1, &menu_level_2);
+         
+        ifstream inputFile("input.txt");
+        inputFile >> menu_level_1;
+        inputFile >> menu_level_2;
+        inputFile.close();
+
+        
+
+
         // 메뉴 구분 및 해당 연산 수행
         switch (menu_level_1)
         {
@@ -56,7 +70,7 @@ void doTask()
 
                 a.startInterface(); // 1.startInterface
                 user_list.push_back( a.signup() ); // 2.signup // 2.1. showResult // user_list vector에 새로 회원가입한 user 추가
-                
+
                 break;
             }
             case 2: // "1.2. 회원탈퇴"
@@ -91,7 +105,7 @@ void doTask()
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
             {
-               ListJobPostingUI().startinterface(user.getname(), jobPostings);
+               
             }
             }
         }
@@ -133,12 +147,13 @@ void doTask()
             {
             case 1: // "6.1. 종료“ 메뉴 부분
             {
-                program_exit();
+                //program_exit();
                 is_program_exit = 1;
                 break;;
             }
             }
         }
+
         }
     }
     return;

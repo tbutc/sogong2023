@@ -5,10 +5,10 @@
 
 using namespace std;
 
-bool User :: GetCorrespond() {
+bool User::GetCorrespond() {
     return true;
 }
 
-string User :: getname(){
+string User::getname() {
     return this->name;
 }
