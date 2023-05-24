@@ -12,3 +12,7 @@ bool User::GetCorrespond() {
 string User::getname() {
     return this->name;
 }
+
+strinng User::getssn(){
+    return this->SSN;
+}
