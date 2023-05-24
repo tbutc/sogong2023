@@ -20,3 +20,7 @@ string User::getssn() const {
 string User::getid() const{
     return this->id;
 }
+
+string User::getpwd() const {
+    return this->pwd;
+}

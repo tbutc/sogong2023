@@ -12,4 +12,5 @@ class SignUp // 회원가입 control
 {
 public:
     User showResult(int type, string name, string SSN, string id, string pwd);
+    User join(ifstream& inputFile);
 };

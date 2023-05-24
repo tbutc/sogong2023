@@ -20,7 +20,6 @@ void SignUpUI::startInterface() {
     
 }
 
-
 User SignUpUI::signup(ifstream& inputFile){
     string id, pwd, name, SSN;
     int type;
@@ -33,8 +32,6 @@ User SignUpUI::signup(ifstream& inputFile){
 
     inputFile.close();
     
-   
-
     SignUp a;
     User newUser = a.showResult(type, name, SSN, id, pwd);
 
