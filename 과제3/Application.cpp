@@ -7,6 +7,7 @@
 using namespace std;
 
 
+
 //apply된거는 status가 1로 되었다 가정.
 vector<Application> getApplication(const User& user, const vector<Application>& applications) {
     vector<Application> userApplications;
@@ -29,7 +30,7 @@ JobPosting getJobPosting(const Application& application, const vector<JobPosting
         }
     }
 
-    return JobPosting(nullptr, "", 0, { 0, 0, 0 });
+    return JobPosting(nullptr, nullptr, { "", 0, { 0, 0, 0 } });
 }
 
 
@@ -56,7 +57,7 @@ void showSortedApplication(const User& user, const vector<Application>& applicat
     if (outputFile.is_open()) {
         for (const JobPosting& job : sortedJobPostings) {
             JobDetail detail = job.getJobPostingDetail();
-            outputFile << *(job.getJobPostingcname()) << " " << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline.year << "/" << detail.deadline.month << "/" << detail.deadline.day << endl; //사업자 번호 추가
+            outputFile << *(job.getJobPostingcname()) <<*(job.getJobPostingssn()) << " " << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline.year << "/" << detail.deadline.month << "/" << detail.deadline.day << endl; //사업자 번호 추가
         }
         outputFile.close();
     }
