@@ -9,5 +9,5 @@ private:
 
 public:
     ListJobPosting();
-    vector<JobDetail> showJobPosting(int* const ssn, vector<JobPosting> jobPostings);
+    vector<JobDetail> start(string  ssn, vector<JobPosting> jobPostings);
 };

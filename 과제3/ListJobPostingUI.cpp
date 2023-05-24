@@ -3,7 +3,7 @@
 
 ListJobPostingUI::ListJobPostingUI() {}
 
-void ListJobPostingUI::startinterface(int* const ssn, vector<JobPosting> jobPostings)
+void ListJobPostingUI::startinterface(vector<JobDetail> details)
 {
     ofstream writeFile;
     writeFile.open("a.txt");
@@ -12,14 +12,13 @@ void ListJobPostingUI::startinterface(int* const ssn, vector<JobPosting> jobPost
 
 
 	ListJobPosting listjobposting;
-	vector<JobDetail> details = listjobposting.showJobPosting(ssn, jobPostings);
 
     cout << "3.2.등록된 채용 정보 조회 \n> ";
 
 
 
 
-    for (auto& detail : details)
+    for (auto detail : details)
     {
         cout << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline.year << "/" << detail.deadline.month << "/" << detail.deadline.day << "\n  ";
     }

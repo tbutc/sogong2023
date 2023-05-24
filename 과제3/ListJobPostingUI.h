@@ -9,5 +9,5 @@ private:
 
 public:
     ListJobPostingUI();
-    void startinterface(int* const ssn, vector<JobPosting> jobPostings);
+    void startinterface(vector<JobDetail> details);
 };

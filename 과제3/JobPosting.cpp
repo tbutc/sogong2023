@@ -1,6 +1,6 @@
 ﻿#include "JobPosting.h"
 
-JobPosting::JobPosting(string* const cn, int* const ssn, JobDetail jd)
+JobPosting::JobPosting(string cn, string ssn, JobDetail jd)
     : companyname(cn), ssn(ssn)
 {
     jobdetail.JobTitle = jd.JobTitle;
@@ -9,15 +9,15 @@ JobPosting::JobPosting(string* const cn, int* const ssn, JobDetail jd)
 }
 
 
-const string* JobPosting:: getJobPostingcname() const{
+ string JobPosting:: getJobPostingcname() {
     return companyname;
 }
 
-const int* JobPosting:: getJobPostingssn() const{
+ string JobPosting:: getJobPostingssn() {
     return ssn;
 }
 
 
-JobDetail JobPosting:: getJobPostingDetail() const{
+JobDetail JobPosting:: getJobPostingDetail() {
     return jobdetail;
 }
