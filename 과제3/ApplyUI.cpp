@@ -10,10 +10,10 @@ using namespace std;
 ApplyUI::ApplyUI() {}
 
 void ApplyUI::showInterface() {
-    ofstream writeFile;
-    writeFile.open("input.txt");
-    string str = "4.2. Ã¤¿ë Áö¿ø \n> ";
-    writeFile.write(str.c_str(), str.size());
+    ofstream outputFile("output.txt", ios::app);
+    string message = "4.2. ì±„ìš© ì§€ì›\n> ";
+    outputFile << message;
+    outputFile.close();
 }
 
 void ApplyUI::ApplyRequest() {
