@@ -5,7 +5,7 @@ class ApplyUI
 private:
 
 public:
-    void startInterface();
+    void showInterface();
 
     void ApplyRequest();
 };

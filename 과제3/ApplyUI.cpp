@@ -2,13 +2,14 @@
 #include <string>
 #include <cstdio>
 #include <fstream>
+#include <vector>
+#include "JobPosting.h"
 
-#include "ApplyUI.h"
-#include "Apply.h"
-#inclue "JobPosting.h"
 using namespace std;
 
-void ApplyUI::startInterface() {
+ApplyUI::ApplyUI() {}
+
+void ApplyUI::showInterface() {
     ofstream writeFile;
     writeFile.open("input.txt");
     string str = "4.2. 채용 지원 \n> ";
@@ -16,11 +17,11 @@ void ApplyUI::startInterface() {
 }
 
 void ApplyUI::ApplyRequest() {
-    strinig SSN;
-    cin >> SSN;
+  
 
+    
+}
 
-    cout << CompanyName;
-    cout << SSN;
-    cout << JobTitle;
+void ApplyUI::showResult() {
+
 }
