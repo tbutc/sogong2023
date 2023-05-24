@@ -1,30 +1,22 @@
-#pragma once
+#ifndef APPLYINFO_H
+#define APPLYINFO_H
+
 #include <string>
-#include <ctime>
 
-using namespace std;
-
-struct Date {
-    int year;
-    int month;
-    int day;
-};
-
-struct JobDetail {
-    string JobTitle;
-    int applicantLimit;
-    Date deadline;
-};
-
-
-class JobPosting {
+class ApplyInfo {
 private:
-    string* const companyname;
-    struct JobDetail jobdetail;
+    std::string companyName;
+    std::string registrationNumber;
+    std::string jobTitle;
 
 public:
-    JobPosting(string* const cn, JobDetail jd);
-    const string* getJobPostingcname() const;
-    JobDetail getJobPostingDetail() const;
+    ApplyInfo(const std::string& cn, const std::string& rn, const std::string& jt);
+
+    std::string getCompanyName() const;
+    std::string getRegistrationNumber() const;
+    std::string getJobTitle() const;
 };
+
+#endif
+
 

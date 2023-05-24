@@ -1,14 +1,16 @@
 
 #include <iostream>
 #include <string>
-#include <string.h>
 #include <cstdio>
+#include <vector>
+#include "JobPosting.h"
 
 using namespace std;
 
 class Apply
 {
 public:
-    void Application();
-    void getcheckClosing();
-}
+    vector<JobDetail> start(string ssn, vector<JobPosting> jobPostings);
+    
+
+}; 

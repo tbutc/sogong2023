@@ -5,7 +5,6 @@ class ApplyUI
 private:
 
 public:
-    void showInterface();
-
-    void ApplyRequest();
+    ApplyUI();
+    void showInterface(JobPosting jobposting);
 };
