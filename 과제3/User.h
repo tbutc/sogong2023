@@ -8,15 +8,16 @@ using namespace std;
 
 class User {
 private:
-    int UserType; // 1ÀÌ¸é ÀÏ¹ÝÈ¸¿ø, 2ÀÌ¸é È¸»çÈ¸¿ø
+    int UserType; // 1ì´ë©´ ì¼ë°˜íšŒì›, 2ì´ë©´ íšŒì‚¬íšŒì›
     string name;
-    string SSN; // ÀÏ¹ÝÈ¸¿øÀÌ¸é ÁÖ¹Îµî·Ï¹øÈ£, È¸»çÈ¸¿øÀÌ¸é »ç¾÷ÀÚ¹øÈ£
+    string SSN; // ì¼ë°˜íšŒì›ì´ë©´ ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸, íšŒì‚¬íšŒì›ì´ë©´ ì‚¬ì—…ìžë²ˆí˜¸
     string id;
     string pwd;
 public:
     bool GetCorrespond();
 
     string getname();
+    strinng getssn();
 
     User(int UserType, string name, string SSN, string id, string pwd) {
         this->UserType = UserType;
