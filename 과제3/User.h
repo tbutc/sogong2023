@@ -17,7 +17,7 @@ public:
     bool GetCorrespond();
 
     string getname();
-    strinng getssn();
+    string getssn();
 
     User(int UserType, string name, string SSN, string id, string pwd) {
         this->UserType = UserType;
