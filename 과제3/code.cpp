@@ -8,6 +8,7 @@
 #include "ListJobPostingUI.h"
 #include "User.h"
 #include "SignUpUI.h"
+#include "LoginUI.h"
 
 
 using namespace std;
@@ -76,7 +77,9 @@ void doTask()
             {
             case 1: // "2.1. 로그인"
             {
-
+                LoginUI a;
+                a.startInterface();
+                a.LoginRequest(inputFile);
             }
             case 2: // "2.2. 로그아웃"
             {
