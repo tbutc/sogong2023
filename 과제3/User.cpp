@@ -9,10 +9,10 @@ bool User::GetCorrespond() {
     return true;
 }
 
-string User::getname() {
+string User::getname() const {
     return this->name;
 }
 
-string User::getssn(){
+string User::getssn() const {
     return this->SSN;
 }
