@@ -13,6 +13,6 @@ string User::getname() {
     return this->name;
 }
 
-strinng User::getssn(){
+string User::getssn(){
     return this->SSN;
 }
