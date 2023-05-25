@@ -43,10 +43,11 @@ void doTask()
 
     vector <User> user_list;
     LogStatus logstatus;
-
+    ifstream inputFile("input.txt");
+    
     while (!is_program_exit)
     {
-        ifstream inputFile("input.txt");
+        menu_level_1 = 0, menu_level_2 = 0;
         inputFile >> menu_level_1;
         inputFile >> menu_level_2;
 
@@ -71,6 +72,7 @@ void doTask()
                 break;
             }
             }
+            break;
         }
         case 2:
         {
@@ -80,12 +82,15 @@ void doTask()
             {
                 Login a;
                 a.log_in(inputFile, &user_list);
+
+                break;
             }
             case 2: // "2.2. 로그아웃"
             {
-
+                break;
             }
             }
+            break;
         }
 
         case 3:
@@ -94,11 +99,11 @@ void doTask()
             {
             case 1: // "3.1. 채용 정보 등록"
             {
-
+                break;
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
             {
-               
+                break;
             }
             }
         }
@@ -109,11 +114,11 @@ void doTask()
             {
             case 1:
             {
-
+                break;
             }
             case 2:
             {
-
+                break;
             }
             }
         }
@@ -124,21 +129,21 @@ void doTask()
             {
             case 1:
             {
-
+                break;
             }
             case 2:
             {
-
+                break;
             }
             }
         }
 
                 
-        case 6:
+        case 0:
         {
             switch (menu_level_2)
             {
-            case 1: // "6.1. 종료“ 메뉴 부분
+            case 0: // "6.1. 종료“ 메뉴 부분
             {
                 //program_exit();
                 is_program_exit = 1;
