@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// 채용정보를 등록하기 위한 AddJobPosting 클래스 정의
 class AddJobPosting
 {
 private:
