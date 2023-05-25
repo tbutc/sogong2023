@@ -1,4 +1,5 @@
-﻿#include <string>
+﻿#pragma once
+#include <string>
 #include <ctime>
 
 using namespace std;
@@ -14,7 +15,6 @@ struct JobDetail {
     int applicantLimit;
     Date deadline;
 };
-
 
 class JobPosting {
 private:

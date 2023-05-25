@@ -2,12 +2,15 @@
 #include <vector>
 #include <map>
 #include "JobPosting.h"
+#include "Application.h"
+#include"SummingUpUI.h"
 
+class SummingUpUI;
 
 class SummingUp {
 private:
 
 public:
-	SummingUp();
-	map<string, int> sumup(string name, int usertype, vector<Aplication> Aplications);
+	SummingUp(string id, int usertype, vector<Application> Applications);
+	map<string, int> sumup(string ssn, int usertype, vector<Application> Aplications);
 };

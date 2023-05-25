@@ -9,6 +9,5 @@ class ListJobPosting {
 private:
 
 public:
-    ListJobPosting();
-    vector<JobDetail> start(string  ssn, vector<JobPosting> jobPostings);
+    ListJobPosting(string ssn, vector<JobPosting> jobPostings);
 };

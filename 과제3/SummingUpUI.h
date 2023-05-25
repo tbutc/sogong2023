@@ -1,11 +1,15 @@
 #include <iostream>
-#include "SummingUp.h"
+#include <fstream>
+#include <map>
+
 using namespace std;
+
+class Application;
 
 class SummingUpUI {
 private:
 
 public:
     SummingUpUI();
-    void startinterface(string name, int usertype, vector<Application> Applications);
+    void startinterface(map<string, int> applicant);
 };

@@ -1,19 +1,25 @@
 #include "SummingUpUI.h"
 
-
 SummingUpUI::SummingUpUI() {}
 
-void SummingUpUI::startinterface(string name, int usertype, vector<Application> Applications)
+void SummingUpUI::startinterface(map<string, int> applicant)
 {
+	ofstream writeFile("output.txt", std::ios::app);
 
-	cout << "5.1. 지원 정보 통계 \n> ";
+	writeFile << "\n5.1. 지원 정보 통계 \n> ";
 
-	map<string, int> applicant = SummingUp().sumup(name, usertype, Applications);
+	bool isFirst = true;
 
-	for (const auto& ap : applicant) {
-		cout << ap.first << ": " << ap.second << '\n';
+	for ( auto ap : applicant)
+	{
+		if (!isFirst)
+		{
+			writeFile << "\n   ";
+		}
+		writeFile << ap.first << ": " << ap.second;
+
+		isFirst = false;
 	}
 
+	writeFile.close();
 }
-
-
