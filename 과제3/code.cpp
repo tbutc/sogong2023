@@ -6,7 +6,7 @@
 #include <fstream>
 
 #include "ListJobPostingUI.h"
-
+#include "ListApplication.h"
 #include "User.h"
 #include "SignUp.h"
 #include "Login.h"
@@ -43,12 +43,14 @@ void doTask()
 
     logstatus->change_log_user(nullptr);
     logstatus->deactivate();
+    
 
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
     vector <User> user_list;
-
+    vector<Application> applications;
+    
     ifstream inputFile("input.txt");
 
     while (!is_program_exit)
@@ -125,7 +127,7 @@ void doTask()
             break;
         }
 
-        case 4:
+            case 4:
         {
             switch (menu_level_2)
             {
@@ -135,6 +137,19 @@ void doTask()
             }
             case 2:
             {
+                break;
+            }
+            case 3: // 4.3. 지원 정보 조회
+            {
+                ApplicationUI applicationUI;
+                applicationUI.showSortedApplications(applications);
+                break;
+            }
+            case 4: // 4.4. 지원 취소
+            {
+                ApplicationUI applicationUI;
+                string ssn;
+                applicationUI.PrintcancelApplication(ssn, applications);
                 break;
             }
             }
