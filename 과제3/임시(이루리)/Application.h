@@ -1,22 +1,39 @@
-#pragma once
-#include <string>
+
 #include "JobPosting.h"
-#include "User.h"
+#include <string>
+#include <ctime>
+using namespace std;
 
 
 class Application {
 private:
-    JobPosting applicationRecord;
-    string ID;
+    string companyName;
+    string registrationNumber;
+    string jobTitle;
+    int applicantLimit;
+    Date deadline;
 
 public:
-    Application(JobPosting jp, string id);
-    void getApplication();
-    JobPosting getJobPosting();
+    Application(string& cn, string& rn, string& jt, int al, Date& dl)
+        : companyName(cn), registrationNumber(rn), jobTitle(jt), applicantLimit(al), deadline(dl) {}
 
-     string getid()  {
-        return ID;
-    }    
-    void showSortedApplication();
+    string getCompanyName() {
+        return companyName;
+    }
+
+    string getRegistrationNumber()  {
+        return registrationNumber;
+    }
+
+    string getJobTitle() {
+        return jobTitle;
+    }
+
+    int getApplicantLimit()  {
+        return applicantLimit;
+    }
+
+    Date getDeadline() {
+        return deadline;
+    }
 };
-
