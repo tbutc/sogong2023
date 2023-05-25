@@ -4,16 +4,14 @@
 #include <string>
 #include <vector>
 #include <fstream>
-
-#include "ListJobPostingUI.h"
-
 #include "User.h"
 #include "SignUp.h"
 #include "Login.h"
 #include "LogStatus.h"
 #include "Logout.h"
 #include "memWithdraw.h"
-
+#include "ListJobPosting.h"
+#include "SummingUp.h"
 
 using namespace std;
 
@@ -126,6 +124,7 @@ void doTask()
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
             {
+                ListJobPosting(logged_user.getssn(), jobPostings);
                 break;
             }
             }
@@ -152,8 +151,9 @@ void doTask()
         {
             switch (menu_level_2)
             {
-            case 1:
+            case 1: //"5.1. 지원 정보 통계"
             {
+                SummingUp(logged_user.getid(), logged_user.getusertype(), Applications);
                 break;
             }
             case 2:
@@ -165,11 +165,11 @@ void doTask()
         }
 
 
-        case 0:
+        case 6:
         {
             switch (menu_level_2)
             {
-            case 0: // "6.1. 종료“ 메뉴 부분
+            case 1: // "6.1. 종료“ 메뉴 부분
             {
                 //program_exit();
                 is_program_exit = 1;
