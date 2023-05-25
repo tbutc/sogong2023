@@ -1,4 +1,4 @@
-// 헤더 선언
+﻿// 헤더 선언
 #include <stdio.h>
 #include <string.h>
 #include <string>
@@ -22,7 +22,7 @@ using namespace std;
 
 // 함수 선언
 void doTask();
-//void program_exit();
+void program_exit(ifstream & inputFile);
 
 // 변수 선언
 FILE* in_fp, * out_fp;
@@ -53,7 +53,7 @@ void doTask()
     Login in;
     Logout out;
     SignUp up;
-    memWithdraw mW;
+    //memWithdraw mW;
 
 
     while (!is_program_exit)
@@ -72,15 +72,15 @@ void doTask()
             {
             case 1: // "1.1. 회원가입“ 메뉴 부분
             {
-                
+
                 user_list.push_back(up.join(inputFile));
 
                 break;
             }
             case 2: // "1.2. 회원탈퇴"
             {
-                User * del_user = mW.withdraw(&user_list, logged_user);
-                user_list.erase(remove(user_list.begin(), user_list.end(), *del_user), user_list.end());
+                //User* del_user = mW.withdraw(&user_list, logged_user);
+                //user_list.erase(remove(user_list.begin(), user_list.end(), *del_user), user_list.end());
 
                 break;
             }
@@ -169,9 +169,9 @@ void doTask()
         {
             switch (menu_level_2)
             {
-            case 1: // "6.1. 종료“ 메뉴 부분
+            case 1: // "6.1. 종료" 메뉴 부분
             {
-                //program_exit();
+                program_exit(inputFile);
                 is_program_exit = 1;
                 break;
             }
@@ -182,4 +182,11 @@ void doTask()
         }
     }
     return;
+}
+
+void program_exit(ifstream& inputFile) {
+    ofstream outputFile("output.txt", ios::app);
+    outputFile << "6.1. 종료"<< endl;
+    outputFile.close();
+    inputFile.close();
 }
