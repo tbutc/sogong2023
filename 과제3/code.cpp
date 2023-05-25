@@ -1,4 +1,4 @@
-﻿// 헤더 선언
+// 헤더 선언
 #include <stdio.h>
 #include <string.h>
 #include <string>
@@ -11,7 +11,9 @@
 #include "Logout.h"
 #include "memWithdraw.h"
 #include "ListJobPosting.h"
+#include "Application.h"
 #include "SummingUp.h"
+#include "ListApplication.h"
 
 using namespace std;
 
@@ -47,12 +49,14 @@ void doTask()
     int is_program_exit = 0;
 
     vector <User> user_list;
+    vector<Application> Applications;
 
     ifstream inputFile("input.txt");
 
     Login in;
     Logout out;
     SignUp up;
+    ApplicationUI applicationUI;
     //memWithdraw mW;
 
 
@@ -79,7 +83,8 @@ void doTask()
             }
             case 2: // "1.2. 회원탈퇴"
             {
-                User* del_user = mW.withdraw(&user_list, logged_user);
+                //User* del_user = mW.withdraw(&user_list, logged_user);
+                //user_list.erase(remove(user_list.begin(), user_list.end(), *del_user), user_list.end());
 
                 break;
             }
@@ -142,6 +147,18 @@ void doTask()
             {
                 break;
             }
+            case 3: // 4.3. 지원 정보 조회
+            {
+                applicationUI.showSortedApplications(Applications);
+                break;
+            }
+            case 4: // 4.4. 지원 취소
+            {
+                string ssn;
+                inputFile >> ssn;
+                applicationUI.PrintcancelApplication(ssn, Applications);
+                break;
+            }
             }
             break;
         }
@@ -183,12 +200,6 @@ void doTask()
     return;
 }
 
-/*
-    함수 이름 : program_exit
-    기능	  : do_task 함수 종료시키기
-    전달 인자 : inputFile
-    반환값    : UserType - 1이면 일반회원, 2이면 회사회원
-*/
 void program_exit(ifstream& inputFile) {
     ofstream outputFile("output.txt", ios::app);
     outputFile << "6.1. 종료"<< endl;
