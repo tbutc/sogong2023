@@ -38,13 +38,18 @@ int main()
 
 void doTask()
 {
+    LogStatus* logstatus = new LogStatus();
+
+    logstatus->change_log_user(nullptr);
+    logstatus->deactivate();
+
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
     vector <User> user_list;
-    LogStatus logstatus;
+
     ifstream inputFile("input.txt");
-    
+
     while (!is_program_exit)
     {
         menu_level_1 = 0, menu_level_2 = 0;
@@ -81,12 +86,22 @@ void doTask()
             case 1: // "2.1. 로그인"
             {
                 Login a;
-                a.log_in(inputFile, &user_list);
+                User* logged_user = a.log_in(inputFile, &user_list); //log_in 함수 실행하여 반환값을 logged_user에 저장
+
+                logstatus->change_log_user(logged_user);
+                if (logstatus->get_log_user() != nullptr) { logstatus->activate(); }
 
                 break;
+
             }
-            case 2: // "2.2. 로그아웃"
+            case 2: // "2.2. 로그아웃
             {
+
+                logstatus->deactivate();
+
+                Logout a;
+                User logout_user = *a.log_out(&user_list, logstatus->get_log_user()); // control 함수인 log_out 실행
+
                 break;
             }
             }
@@ -106,6 +121,7 @@ void doTask()
                 break;
             }
             }
+            break;
         }
 
         case 4:
@@ -121,6 +137,7 @@ void doTask()
                 break;
             }
             }
+            break;
         }
 
         case 5:
@@ -136,9 +153,10 @@ void doTask()
                 break;
             }
             }
+            break;
         }
 
-                
+
         case 0:
         {
             switch (menu_level_2)
@@ -147,9 +165,10 @@ void doTask()
             {
                 //program_exit();
                 is_program_exit = 1;
-                break;;
+                break;
             }
             }
+            break;
         }
 
         }
