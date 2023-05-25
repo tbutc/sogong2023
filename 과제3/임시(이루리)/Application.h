@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "JobPosting.h"
 #include <string>
 #include <ctime>
@@ -14,26 +14,26 @@ private:
     Date deadline;
 
 public:
-    Application(const std::string& cn, const std::string& rn, const std::string& jt, int al, const Date& dl)
+    Application(string& cn, string& rn, string& jt, int al, Date& dl)
         : companyName(cn), registrationNumber(rn), jobTitle(jt), applicantLimit(al), deadline(dl) {}
 
-    string getCompanyName() const {
+    string getCompanyName() {
         return companyName;
     }
 
-    string getRegistrationNumber() const {
+    string getRegistrationNumber()  {
         return registrationNumber;
     }
 
-    string getJobTitle() const {
+    string getJobTitle() {
         return jobTitle;
     }
 
-    int getApplicantLimit() const {
+    int getApplicantLimit()  {
         return applicantLimit;
     }
 
-    Date getDeadline() const {
+    Date getDeadline() {
         return deadline;
     }
 };
