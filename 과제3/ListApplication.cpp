@@ -7,7 +7,7 @@
 
 ListApplication::ListApplication() {}
 
-ListApplication::ListApplication(vector<Application> applications)
+ListApplication::ListApplication(vector<Application>& applications)
 {
     vector<Application> sortedApplications = applications;
     sort(sortedApplications.begin(), sortedApplications.end(), ListApplication::compareByCompanyName);
@@ -21,7 +21,6 @@ bool ListApplication::compareByCompanyName(Application a, Application b) {
 void ListApplication::cancelApplication(string ssn, vector<Application> applications) {
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         if (it->getRegistrationNumber() == ssn) {
-            // 취소된 지원 정보 출력
             ofstream outputFile("output.txt", ios::app);
             outputFile << it->getCompanyName() << " ";
             outputFile << it->getRegistrationNumber() << " ";
