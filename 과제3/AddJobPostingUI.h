@@ -7,5 +7,6 @@ private:
 
 public:
     AddJobPostingUI();
-    void showInterface(JobPosting jobposting);
+    void showInterface(vector<JobDetail> jobdetial);
+    
 };
