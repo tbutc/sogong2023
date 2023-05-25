@@ -7,24 +7,34 @@
 #include "memWithdrawUI.h"
 #include "User.h"
 
+/*
+	í•¨ìˆ˜ ì´ë¦„ : memWithdrawUI::showResult
+    ê¸°ëŠ¥	  : íƒˆí‡´í•˜ê³ ì í•˜ëŠ” íšŒì› íƒìƒ‰
+    ì „ë‹¬ ì¸ì : user_list, logout_user
+    ë°˜í™˜ê°’    : User ì£¼ì†Œê°’
+*/
 User * memWithdraw::showResult(vector <User>* user_list, User* logout_user) {
 	
-	User* matching_user = nullptr; // ÀÏÄ¡ÇÏ´Â »ç¿ëÀÚ¸¦ ÀúÀåÇÒ Æ÷ÀÎÅÍ
+	User* matching_user = nullptr; // ì¼ì¹˜í•˜ëŠ” ì‚¬ìš©ìë¥¼ ì €ì¥í•  í¬ì¸í„°
 
 	for (auto& user : *user_list) {
 		if (user.getid() == logout_user->getid() && user.getpwd() == logout_user->getpwd()) {
-			matching_user = &user; // ÀÏÄ¡ÇÏ´Â »ç¿ëÀÚ¸¦ matching_user¿¡ ÀúÀå
-			break; // ÀÏÄ¡ÇÏ´Â »ç¿ëÀÚ¸¦ Ã£¾ÒÀ¸¹Ç·Î ¹İº¹¹® Á¾·á
+			matching_user = &user; // ì¼ì¹˜í•˜ëŠ” ì‚¬ìš©ìë¥¼ matching_userì— ì €ì¥
+			break; // ì¼ì¹˜í•˜ëŠ” ì‚¬ìš©ìë¥¼ ì°¾ì•˜ìœ¼ë¯€ë¡œ ë°˜ë³µë¬¸ ì¢…ë£Œ
 		}
 	}
 	return matching_user;
 }
 
+/*
+	í•¨ìˆ˜ ì´ë¦„ : memWithdrawUI::withdraw
+    ê¸°ëŠ¥	  : íƒˆí‡´ì‹œí‚¤ê¸°
+    ì „ë‹¬ ì¸ì : user_list, logout_user
+    ë°˜í™˜ê°’    : User ì£¼ì†Œê°’
+*/
 User*  memWithdraw:: withdraw(vector <User>* user_list, User* logout_user) {
 	memWithdrawUI a;
 	a.startInterface();
-
-	//~User
 
 	return a.memberWithdraw(user_list, logout_user);
 }
