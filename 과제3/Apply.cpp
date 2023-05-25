@@ -16,7 +16,7 @@ vector<Application> Apply::start(string ssn, vector<JobPosting> jobPostings) {
             int applicantLimit = posting.getJobPostingDetail().applicantLimit;
             Date deadline = posting.getJobPostingDetail().deadline;
 
-            Application application(companyName, registrationNumber, jobTitle, applicantLimit, deadline);
+            Application application(posting, ssn);
             applications.push_back(application);
         }
     }
