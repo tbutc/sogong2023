@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <vector>
 #include "Application.h"
-
+#pragma once
 #include <ctime>
 
 using namespace std;
