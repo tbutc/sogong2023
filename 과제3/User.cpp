@@ -6,10 +6,10 @@
 using namespace std;
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : User::GetCorrespond
-    ±â´É	  : ÀÏÄ¡ ¿©ºÎ ¹ÝÈ¯
-    Àü´Þ ÀÎÀÚ : ¾øÀ½
-    ¹ÝÈ¯°ª    : true
+    í•¨ìˆ˜ ì´ë¦„ : User::GetCorrespond
+    ê¸°ëŠ¥	  : ì¼ì¹˜ ì—¬ë¶€ ë°˜í™˜
+    ì „ë‹¬ ì¸ìž : ì—†ìŒ
+    ë°˜í™˜ê°’    : true
 */
 bool User::GetCorrespond() {
     return true;
@@ -17,10 +17,10 @@ bool User::GetCorrespond() {
 
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : User::getname
-    ±â´É	  : name ¹ÝÈ¯
-    Àü´Þ ÀÎÀÚ : ¾øÀ½
-    ¹ÝÈ¯°ª    : name
+    í•¨ìˆ˜ ì´ë¦„ : User::getname
+    ê¸°ëŠ¥	  : name ë°˜í™˜
+    ì „ë‹¬ ì¸ìž : ì—†ìŒ
+    ë°˜í™˜ê°’    : name
 */
 string User::getname() const {
     return this->name;
@@ -28,20 +28,20 @@ string User::getname() const {
 
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : User::getssn
-    ±â´É	  : ssn ¹ÝÈ¯
-    Àü´Þ ÀÎÀÚ : ¾øÀ½
-    ¹ÝÈ¯°ª    : ssn
+    í•¨ìˆ˜ ì´ë¦„ : User::getssn
+    ê¸°ëŠ¥	  : ssn ë°˜í™˜
+    ì „ë‹¬ ì¸ìž : ì—†ìŒ
+    ë°˜í™˜ê°’    : ssn
 */
 string User::getssn() const {
     return this->SSN;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : User::getid
-    ±â´É	  : id ¹ÝÈ¯
-    Àü´Þ ÀÎÀÚ : ¾øÀ½
-    ¹ÝÈ¯°ª    : id
+    í•¨ìˆ˜ ì´ë¦„ : User::getid
+    ê¸°ëŠ¥	  : id ë°˜í™˜
+    ì „ë‹¬ ì¸ìž : ì—†ìŒ
+    ë°˜í™˜ê°’    : id
 */
 string User::getid() const{
     return this->id;
@@ -49,17 +49,25 @@ string User::getid() const{
 
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : User::getpwd
-    ±â´É	  : pwd ¹ÝÈ¯
-    Àü´Þ ÀÎÀÚ : ¾øÀ½
-    ¹ÝÈ¯°ª    : pwd
+    í•¨ìˆ˜ ì´ë¦„ : User::getpwd
+    ê¸°ëŠ¥	  : pwd ë°˜í™˜
+    ì „ë‹¬ ì¸ìž : ì—†ìŒ
+    ë°˜í™˜ê°’    : pwd
 */
 string User::getpwd() const {
     return this->pwd;
 }
 
 
-
+/*
+    í•¨ìˆ˜ ì´ë¦„ : User::getusertype
+    ê¸°ëŠ¥	  : UserType ë°˜í™˜
+    ì „ë‹¬ ì¸ìž : ì—†ìŒ
+    ë°˜í™˜ê°’    : UserType - 1ì´ë©´ ì¼ë°˜íšŒì›, 2ì´ë©´ íšŒì‚¬íšŒì›
+*/
+int User::getusertype() const {
+    return this->UserType;
+}
 int User::getusertype() const {
     return this->UserType;
 }
