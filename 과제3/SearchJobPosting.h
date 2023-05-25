@@ -10,5 +10,5 @@ class SearchJobPosting
 {
 public:
     void getJobPostingdetail();
-    vector<JobDetail> start(string  ssn, vector<JobPosting> jobPostings);
-};
+    vector<JobDetail> JobPostingdetail(string cn, vector<JobPosting> jobPostings);
+}; 
