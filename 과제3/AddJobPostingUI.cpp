@@ -8,10 +8,10 @@
 
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : ListJobPostingUI::startinterface()
-    ±â´É     : Ã¤¿ëÁ¤º¸Á¶È¸ UI¸¦ Ç¥½ÃÇÏ´Â ÇÔ¼ö
-    Àü´Ş ÀÎÀÚ : details -> Ã¤¿ë¼¼ºÎÁ¤º¸ ÁıÇÕ
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : ListJobPostingUI::startinterface()
+    ê¸°ëŠ¥     : ì±„ìš©ì •ë³´ì¡°íšŒ UIë¥¼ í‘œì‹œí•˜ëŠ” í•¨ìˆ˜
+    ì „ë‹¬ ì¸ì : details -> ì±„ìš©ì„¸ë¶€ì •ë³´ ì§‘í•©
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 using namespace std;
@@ -21,7 +21,7 @@ AddJobPostingUI::AddJobPostingUI(){}
 JobDetail AddJobPostingUI::startinterface(ifstream& inputFile)
 {
     ofstream outputFile("output.txt", ios::app);
-    outputFile << "3.1. Ã¤¿ë Á¤º¸ µî·Ï\n> ";
+    outputFile << "3.1. ì±„ìš© ì •ë³´ ë“±ë¡\n> ";
     outputFile.close();
 
     JobDetail jobdetail;
@@ -30,6 +30,13 @@ JobDetail AddJobPostingUI::startinterface(ifstream& inputFile)
     inputFile >> jobdetail.deadline;
     return jobdetail;
 }
+
+/*
+í•¨ìˆ˜ ì´ë¦„: AddJobPostingUI::showresult
+ê¸°ëŠ¥: ì±„ìš© ì •ë³´ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+ì „ë‹¬ ì¸ì: jd -> JobDetail
+ë°˜í™˜ê°’: ì—†ìŒ
+*/
 
 void AddJobPostingUI::showresult(JobDetail jd)
 {
