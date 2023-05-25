@@ -7,30 +7,30 @@
 #include "ListApplication.h"
 
 void ApplicationUI::showSortedApplications(vector<Application> sortedApplications) {
-    ofstream outputFile("output.txt", ios::app);
-    string message = "4.3 Áö¿øÁ¤º¸ Á¶È¸:\n";
+    ofstream outputFile("output.txt", std::ios::app);
+    outputFile << "\n4.3 ì§€ì›ì •ë³´ ì¡°íšŒ:\n";
 
-    for (Application& application : sortedApplications) {
-        outputFile << application.getCompanyName();
-        outputFile << " ";
+    for (auto application : sortedApplications) {
+        outputFile << application.getJobPosting().getJobPostingcname();
 
-        outputFile << application.getRegistrationNumber();
         outputFile << " ";
 
-        message = application.getJobTitle();
-        outputFile << message;
+
+        outputFile << application.getJobPosting().getJobPostingssn();
         outputFile << " ";
 
-        outputFile << application.getApplicantLimit();
+        outputFile << application.getJobPosting().getJobPostingDetail().JobTitle;
         outputFile << " ";
 
-        outputFile << application.getDeadline().year, "/";
+        outputFile << application.getJobPosting().getJobPostingDetail().applicantLimit;
         outputFile << " ";
-        outputFile << application.getDeadline().month, "/";
+
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline.year, "/";
         outputFile << " ";
-        outputFile << application.getDeadline().day, "/";
-        outputFile << message;
-        outputFile << "\n ";
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline.month, "/";
+        outputFile << " ";
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline.day, "/";
+        outputFile << " \n";
     }
     outputFile.close();
 }
