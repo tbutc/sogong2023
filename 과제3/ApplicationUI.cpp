@@ -30,12 +30,9 @@ void ApplicationUI::showSortedApplications(vector<Application> sortedApplication
         outputFile << application.getJobPosting().getJobPostingDetail().applicantLimit;
         outputFile << " ";
 
-        outputFile << application.getJobPosting().getJobPostingDetail().deadline.year, "/";
-        outputFile << " ";
-        outputFile << application.getJobPosting().getJobPostingDetail().deadline.month, "/";
-        outputFile << " ";
-        outputFile << application.getJobPosting().getJobPostingDetail().deadline.day, "/";
-        outputFile << " \n";
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline;
+        outputFile << "\n";
+
     }
     outputFile.close();
 }
