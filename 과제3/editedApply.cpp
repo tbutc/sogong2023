@@ -3,7 +3,6 @@
 #include "JobPosting.h"
 #include <iostream>
 #include <fstream>
-#include "Application.h"
 #include "ApplyInfo.h"
 #include <algorithm>
 using namespace std;
@@ -75,7 +74,7 @@ vector<ApplyInfo> Apply::sortApplicationsByCompanyName(const vector<ApplyInfo>& 
 
 
  
- // ¹ŞÀº º¯¼ö¶û »ç¾÷ÀÚ¹øÈ£ ºñ±³ÇÏ´Â ÄÚµå
+ // ë°›ì€ ë³€ìˆ˜ë‘ ì‚¬ì—…ìë²ˆí˜¸ ë¹„êµí•˜ëŠ” ì½”ë“œ
 
 
 
