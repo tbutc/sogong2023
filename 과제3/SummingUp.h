@@ -5,12 +5,11 @@
 #include "Application.h"
 #include"SummingUpUI.h"
 
-class SummingUpUI;
-
+// 통계를 출력하기 위한 SummingUp 클래스 정의
 class SummingUp {
 private:
 
 public:
-	SummingUp(string id, int usertype, vector<Application> Applications);
+	SummingUp(string ssn, int usertype, vector<Application> Applications);
 	map<string, int> sumup(string ssn, int usertype, vector<Application> Aplications);
 };

@@ -1,7 +1,11 @@
 ﻿#include "ListJobPostingUI.h"
 
-ListJobPostingUI::ListJobPostingUI() {}
-
+/*
+    함수 이름 : ListJobPostingUI::startinterface()
+    기능	  : 채용정보조회 UI를 표시하는 함수
+    전달 인자 : details -> 채용세부정보 집합
+    반환값    : 없음
+*/
 void ListJobPostingUI::startinterface(vector<JobDetail> details)
 {
     ofstream writeFile("output.txt", std::ios::app);
