@@ -11,6 +11,7 @@
 #include "SignUp.h"
 #include "Login.h"
 #include "LogStatus.h"
+#include "Logout.h"
 
 
 using namespace std;
@@ -22,10 +23,10 @@ using namespace std;
 
 // 함수 선언
 void doTask();
-void program_exit();
+//void program_exit();
 
 // 변수 선언
-FILE* in_fp, *out_fp;
+FILE* in_fp, * out_fp;
 
 
 
