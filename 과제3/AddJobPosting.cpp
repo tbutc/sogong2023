@@ -4,10 +4,10 @@
 #include "JobPosting.h"
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : AddJobPosting::AddJobPosting()
-    ±â´É     : Ã¤¿ëÁ¤º¸µî·Ï ±â´ÉÀ» ¼öÇàÇÏ´Â »ı¼ºÀÚ
-    Àü´Ş ÀÎÀÚ : inputFile, cn, id, ssn, jobPostings -> inputÆÄÀÏ, È¸»çÀÌ¸§, id, ssn, Ã¤¿ëÁ¤º¸ÁıÇÕ
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : AddJobPosting::AddJobPosting()
+    ê¸°ëŠ¥     : ì±„ìš©ì •ë³´ë“±ë¡ ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ëŠ” ìƒì„±ì
+    ì „ë‹¬ ì¸ì : inputFile, cn, id, ssn, jobPostings -> inputíŒŒì¼, íšŒì‚¬ì´ë¦„, id, ssn, ì±„ìš©ì •ë³´ì§‘í•©
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 AddJobPosting::AddJobPosting(ifstream& inputFile, string cn, string id, string ssn, vector<JobPosting>& jobPostings)
 {
@@ -16,7 +16,12 @@ AddJobPosting::AddJobPosting(ifstream& inputFile, string cn, string id, string s
     AddJobPostingUI().showresult(jobdetail);
 }
 
-
+/*
+í•¨ìˆ˜ ì´ë¦„: AddJobPosting::Add
+ê¸°ëŠ¥: ìƒˆë¡œìš´ ì±„ìš© ì •ë³´ë¥¼ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+ì „ë‹¬ ì¸ì: cn, id, ssn, jobPostings, jd -> íšŒì‚¬ì´ë¦„, ID, ì‚¬ì—…ìë²ˆí˜¸, ì±„ìš©ì •ë³´ì§‘í•© , Jobdetail
+ë°˜í™˜ê°’: ì—†ìŒ
+*/
 
 void AddJobPosting::Add(string cn, string id, string ssn, vector<JobPosting>& jobPostings, JobDetail jd) 
 {
