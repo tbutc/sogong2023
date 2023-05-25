@@ -1,28 +1,46 @@
+﻿#include "Application.h"
 #include <iostream>
-using namespace std;
+#include <algorithm>
 #include <vector>
-//[ȸ���̸�] [����ڹ�ȣ] [����]
-#include "Application.h"
+#include "User.h"
+#include <fstream>
 
-Application::Application(string cn, string rn, string jt, int al, Date dl)
-    : companyName(cn), registrationNumber(rn), jobTitle(jt), applicantLimit(al), deadline(dl) {}
 
-string Application::getCompanyName() {
-    return companyName;
+Application::Application(JobPosting jp, string id) :
+    applicationRecord(jp), ID(id)
+{
+
 }
 
-string Application::getRegistrationNumber() {
-    return registrationNumber;
+JobPosting Application::getJobPosting() {
+    return applicationRecord;
 }
 
-string Application::getJobTitle() {
-    return jobTitle;
-}
 
-int  Application::getApplicantLimit() {
-    return applicantLimit;
+/*
+/정렬위해 bool로 비교/
+bool compareJobPosting( JobPosting a,  JobPosting b) {
+    return (a.getJobPostingcname()) < (b.getJobPostingcname());
 }
-
-Date  Application::getDeadline() {
-    return deadline;
+/정렬 여기서 getJobposting이랑 getApplication 함수 같이 사용하여 연결. /
+void showSortedApplication( User user,  vector<Application> applications,  vector<JobPosting> jobPostings) {
+    vector<Application> userApplications = getApplication(user, applications);
+    vector<JobPosting> sortedJobPostings;
+    for ( Application application : userApplications) {
+        JobPosting jobPosting = getJobPosting(application, jobPostings);
+        sortedJobPostings.push_back(jobPosting);
+    }
+    sort(sortedJobPostings.begin(), sortedJobPostings.end(), compareJobPosting);
+    ofstream outputFile("output.txt");
+    if (outputFile.is_open()) {
+        for ( JobPosting job : sortedJobPostings) {
+            JobDetail detail = job.getJobPostingDetail();
+            outputFile << (job.getJobPostingcname()) << " " << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline.year << "/" << detail.deadline.month << "/" << detail.deadline.day << endl; //사업자 번호 추가
+        }
+        outputFile.close();
+    }
+    else {
+        cout << "파일을 열 수 없습니다." << endl;
+    }
 }
+*/
