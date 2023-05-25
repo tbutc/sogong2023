@@ -1,27 +1,12 @@
-#ifndef APPLY_H
-#define APPLY_H
-#include <cstdio>
+#include "Apply.h"
 #include <vector>
-#include "ApplyInfo.h"
 #include "JobPosting.h"
-
-#include <ctime>
-
-struct Date {
-    int year;
-    int month;
-    int day;
-};
-
+#include <iostream>
+#include <fstream>
+#include "ApplyInfo.h"
+#include <algorithm>
 using namespace std;
 
-class Apply
-{
-public:
-    vector<ApplyInfo> start(string ssn, vector<JobPosting> jobPostings);
-    vector<ApplyInfo> sortApplicationsByCompanyName(const vector<ApplyInfo>& applications);
-    void cancelApplication(string ssn, vector<Application>& applications);
-};
 
 class Application {
 private:
@@ -31,7 +16,7 @@ private:
     int applicantLimit;
     Date deadline;
 public:
-    Application(const std::string& cn, const std::string& rn, const std::string& jt, int al, const Date& dl)
+    Application(const std::string& cn, const std::string& rn, const std::string& jt, int & al, const Date& dl)
         : companyName(cn), registrationNumber(rn), jobTitle(jt), applicantLimit(al), deadline(dl) {}
 
     string getCompanyName() const {
@@ -54,6 +39,32 @@ public:
         return deadline;
     }
 };
-#endif
 
- 
+
+vector<ApplyInfo> Apply::start(string ssn, vector<JobPosting> jobPostings) {
+    vector<ApplyInfo> applications;
+    for (auto& posting : jobPostings) {
+        if (ssn == posting.getJobPostingssn()) {
+            string companyName = posting.getJobPostingcname();
+            string registrationNumber = posting.getJobPostingssn();
+            string jobTitle = posting.getJobPostingDetail().JobTitle;
+            int applicantLimit = posting.getJobPostingDetail().applicantLimit;
+            Date deadline = posting.getJobPostingDetail().deadline;
+
+            ApplyInfo newApplyInfo(companyName, registrationNumber, jobTitle, applicantLimit, deadline);
+            applications.push_back(newApplyInfo);
+        }
+    }
+    return applications;
+}
+
+bool compareByCompanyName(const ApplyInfo& a, const ApplyInfo& b) {
+    return a.getCompanyName() < b.getCompanyName();
+}
+
+vector<ApplyInfo> Apply::sortApplicationsByCompanyName(const vector<ApplyInfo>& applications) {
+    vector<ApplyInfo> sortedApplications = applications;
+    sort(sortedApplications.begin(), sortedApplications.end(), compareByCompanyName);
+    return sortedApplications;
+}
+
