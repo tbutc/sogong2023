@@ -29,11 +29,14 @@ void LoginUI::LoginRequest(ifstream& inputFile, vector <User>* user_list) {
     inputFile >> id;
     inputFile >> pwd;
 
+    /*
     ofstream outputFile("output.txt", ios::app);
-    outputFile << id << ' ';
+    outputFile << id << " ";
     outputFile << pwd << endl;
 
     outputFile.close();
+    */
+    
 
     Login a;
 
@@ -45,15 +48,18 @@ void LoginUI::LoginRequest(ifstream& inputFile, vector <User>* user_list) {
         a.change_log_user(corr_user);
         a.activate();
 
-        /*
-    
+        
         ofstream outputFile("output.txt", ios::app);
         outputFile << corr_user->getid() << ' ';
         outputFile << corr_user->getpwd() << endl;
 
         outputFile.close();
-    
-        */
+    }
+
+    else {
+        ofstream outputFile("output.txt", ios::app);
+        outputFile << "아이디, 비밀번호가 일치하지 않습니다" << endl;
+        outputFile.close();
     }
     
 }
