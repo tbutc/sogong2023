@@ -1,21 +1,14 @@
-﻿#pragma once
+#pragma once
 #include <string>
 #include <ctime>
 
 using namespace std;
 
-//Date 구조체 정의
-struct Date {
-    int year;
-    int month;
-    int day;
-};
-
 //JobDetail 구조체 정의
 struct JobDetail {
     string JobTitle;
     int applicantLimit;
-    Date deadline;
+    string deadline;
 };
 
 // 채용정보를 저장하기 위한 JobPosting 클래스 정의
