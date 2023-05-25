@@ -1,32 +1,18 @@
-/*#include <vector>
-#include <iostream>
-#include "SearchJobPostingUI.h"
-#include "JobPosting.h"
-*/
 #include <iostream>
 #include <string>
 #include <cstdio>
+
+#include "AddJobPostingUI.h"
 #include <fstream>
-#include <vector>
 #include "JobPosting.h"
-#include "SearchJobPostingUI.h"
 
 using namespace std;
 
-SearchJobPostingUI::SearchJobPostingUI() {}
 
-void SearchJobPostingUI::startInterface(JobPosting jobposting) {
+void AddJobPostingUI::showInterface(JobPosting jobposting) {
     ofstream outputFile("output.txt", ios::app);
-    string message = "4.1. 채용 정보 검색\n> ";
+    string message = "3.1. 채용 정보 등록\n> ";
     outputFile << message;
-
-    message = jobposting.getJobPostingcname();
-    outputFile << message;
-    outputFile << " ";
-
-    message = jobposting.getJobPostingssn();
-    outputFile << message;
-    outputFile << " ";
 
     message = jobposting.getJobPostingDetail().JobTitle;
     outputFile << message;

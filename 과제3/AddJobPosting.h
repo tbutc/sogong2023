@@ -1,14 +1,13 @@
-
 #include <string>
 #include <vector>
 #include "JobPosting.h"
 
 using namespace std;
 
-class AddJobPosting {
-private:
-
+class Apply
+{
 public:
-    AddJobPosting();
-    vector<JobDetail> showJobPosting(string* const cn, vector<JobPosting> jobPostings);
+    vector<JobDetail> start(string ssn, vector<JobPosting> jobPostings);
+
+
 };

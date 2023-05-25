@@ -1,7 +1,4 @@
-
-#include <iostream>
 #include <string>
-#include <cstdio>
 #include <vector>
 #include "JobPosting.h"
 

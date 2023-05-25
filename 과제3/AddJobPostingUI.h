@@ -1,15 +1,11 @@
-#pragma once
-#include "ListJobPosting.h"
-#include "JobPosting.h"
 #include <iostream>
+#include <vector>
 
-using namespace std;
-
-class AddJobPostingUI {
+class AddJobPostingUI
+{
 private:
 
-
 public:
-    AddJobPostingUI();
-    void startinterface(string* const cn, vector<JobPosting> jobPostings);
+    AddJobPosting();
+    void showInterface(JobPosting jobposting);
 };

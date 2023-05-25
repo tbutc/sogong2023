@@ -1,8 +1,4 @@
 #include "Apply.h"
-#include <vector>
-#include "JobPosting.h"
-#include <iostream>
-#include <fstream>
 #include "Application.h"
 #include "ApplyInfo.h"
 using namespace std;

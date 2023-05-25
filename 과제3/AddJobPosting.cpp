@@ -1,16 +1,30 @@
-#include "AddJobPosting.h"
-#include "JobPosting.h"
+?#include "AddJobPosting.h"
+
 
 AddJobPosting::AddJobPosting() {}
 
-vector< JobDetail> AddJobPosting::showJobPosting(string* const cn, vector<JobPosting> jobPostings) {
+vector < JobDetail> AddJobPosting::start(string  ssn, vector<JobPosting> jobPostings) {
     vector<JobDetail> Details;
-    for (auto& posting : jobPostings)
+    for (auto posting : jobPostings)
     {
-        if (cn == posting.getJobPostingcname())
+        if (ssn == posting.getJobPostingssn())
         {
             Details.push_back(posting.getJobPostingDetail());
         }
     }
-    return Details;
+    AddJobPostingUI().startinterface(Details);
 }
+/*
+#include "AddJobPosting.h"
+
+AddJobPosting::AddJobPosting() {}
+
+void AddJobPosting::createJobPosting(const std::string& jobTitle, const int applicantLimit, const Date& deadline, JobPosting& jobPosting) {
+    JobDetail jobDetail;
+    jobDetail.JobTitle = jobTitle;
+    jobDetail.applicantLimit = applicantLimit;
+    jobDetail.deadline = deadline;
+
+    jobPosting = JobPosting("", "", jobDetail);
+}
+*/

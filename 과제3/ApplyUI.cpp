@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include <cstdio>
-#include <fstream>
-#include <vector>
-#include "JobPosting.h"
+
 #include "ApplyUI.h"
+#include <fstream>
+#include "JobPosting.h"
 
 using namespace std;
 
