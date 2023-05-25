@@ -1,4 +1,8 @@
-﻿#include "Application.h"
+#include <iostream>
+using namespace std;
+#include <vector>
+//[회사이름] [사업자번호] [업무]
+#include "Application.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
