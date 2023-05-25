@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
-
+#include "JobPosting.h"
 class AddJobPostingUI
 {
 private:
 
 public:
-    AddJobPosting();
+    AddJobPostingUI();
     void showInterface(JobPosting jobposting);
 };

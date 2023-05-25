@@ -4,9 +4,10 @@
 
 using namespace std;
 
-class Apply
+class AddJobPosting
 {
 public:
+    AddJobPosting();
     vector<JobDetail> start(string ssn, vector<JobPosting> jobPostings);
 
 

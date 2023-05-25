@@ -8,7 +8,8 @@
 
 using namespace std;
 
-
+AddJobPostingUI::AddJobPostingUI(){}
+ 
 void AddJobPostingUI::showInterface(JobPosting jobposting) {
     ofstream outputFile("output.txt", ios::app);
     string message = "3.1. 채용 정보 등록\n> ";
