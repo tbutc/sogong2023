@@ -1,7 +1,7 @@
 ﻿#include "JobPosting.h"
 
-JobPosting::JobPosting(string cn, string ssn, JobDetail jd)
-    : companyname(cn), ssn(ssn)
+JobPosting::JobPosting(string cn, string id, string ssn, JobDetail jd)
+    : companyname(cn), id(id), ssn(ssn)
 {
     jobdetail.JobTitle = jd.JobTitle;
     jobdetail.applicantLimit = jd.applicantLimit;
@@ -12,6 +12,10 @@ JobPosting::JobPosting(string cn, string ssn, JobDetail jd)
  string JobPosting:: getJobPostingcname() {
     return companyname;
 }
+
+ string JobPosting::getJobPostingid() {
+     return id;
+ }
 
  string JobPosting:: getJobPostingssn() {
     return ssn;

@@ -19,12 +19,14 @@ struct JobDetail {
 class JobPosting {
 private:
     string companyname;
+    string id;
     string ssn;
     struct JobDetail jobdetail;
 
 public:
-    JobPosting(string cn, string ssn, JobDetail jd);
-     string getJobPostingcname() ;
-     string getJobPostingssn() ;
+    JobPosting(string cn, string id, string ssn, JobDetail jd);
+    string getJobPostingcname();
+    string getJobPostingid();
+    string getJobPostingssn();
     JobDetail getJobPostingDetail() ;
 };

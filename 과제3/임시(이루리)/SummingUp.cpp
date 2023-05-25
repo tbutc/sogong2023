@@ -1,12 +1,12 @@
 #include "SummingUp.h"
 
 
-SummingUp::SummingUp(string ssn, int usertype, vector<Application> Applications)
+SummingUp::SummingUp(string id, int usertype, vector<Application> Applications)
 {
-	SummingUpUI().startinterface(sumup(ssn, usertype, Applications));
+	SummingUpUI().startinterface(sumup(id, usertype, Applications));
 }
 
-map<string, int> SummingUp::sumup(string ssn, int usertype, vector<Application> Applications)
+map<string, int> SummingUp::sumup(string id, int usertype, vector<Application> Applications)
 {
 	map<string, int> applicant;
 
@@ -14,7 +14,7 @@ map<string, int> SummingUp::sumup(string ssn, int usertype, vector<Application> 
 	{
 		for (auto application : Applications)
 		{
-			if (ssn == application.getssn())
+			if (id == application.getid())
 			{
 				if (applicant.count(application.getJobPosting().getJobPostingDetail().JobTitle) > 0)
 				{
@@ -32,7 +32,7 @@ map<string, int> SummingUp::sumup(string ssn, int usertype, vector<Application> 
 	{
 		for (auto application : Applications)
 		{
-			if (ssn == application.getJobPosting().getJobPostingssn())
+			if (id == application.getJobPosting().getJobPostingid())
 			{
 				if (applicant.count(application.getJobPosting().getJobPostingDetail().JobTitle) > 0)
 				{
