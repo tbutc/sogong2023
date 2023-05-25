@@ -15,6 +15,7 @@
 #include "Application.h"
 #include "SummingUp.h"
 #include "ListApplication.h"
+#include "SearchJobPosting.h"
 
 using namespace std;
 
@@ -59,7 +60,8 @@ void doTask()
     Logout out;
     SignUp up;
     ApplicationUI applicationUI;
-    //memWithdraw mW;
+    SearchJobPosting sh;
+    memWithdraw mW;
 
 
     while (!is_program_exit)
@@ -85,8 +87,7 @@ void doTask()
             }
             case 2: // "1.2. 회원탈퇴"
             {
-                //User* del_user = mW.withdraw(&user_list, logged_user);
-                //user_list.erase(remove(user_list.begin(), user_list.end(), *del_user), user_list.end());
+                User* del_user = mW.withdraw(&user_list, logged_user);
 
                 break;
             }
@@ -144,6 +145,7 @@ void doTask()
             {
             case 1:
             {
+                sh.searchpost(inputFile, &jobpostings);
                 break;
             }
             case 2:
