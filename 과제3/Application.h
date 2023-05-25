@@ -13,8 +13,7 @@ public:
     Application(JobPosting jp, string id);
     JobPosting getJobPosting();
 
-     string getid()  {
+    string getid() {
         return ID;
-    }    
+    }
 };
-
