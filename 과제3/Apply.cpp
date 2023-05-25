@@ -8,7 +8,12 @@
 #include "Application.h"
 using namespace std;
 
-
+/*
+함수 이름: Apply::start
+기능: 지원 작성 및 생성을 처리하는 함수
+전달 인자:id, inputFile, jobPostings -> ID, ifstream객체, JobPosting 벡터의 포인터
+반환값: Application* -> 생성된 지원서 객체의 포인터
+*/
 
 
 Application* Apply::start(string id, ifstream& inputFile, vector<JobPosting> * jobPostings) {
