@@ -15,7 +15,7 @@ void ApplicationUI::showSortedApplications(vector<Application> sortedApplication
     ofstream outputFile("output.txt", std::ios::app);
     outputFile << "\n4.3 지원정보 조회:\n";
 
-    for (auto application : sortedApplications) {
+    for (auto& application : sortedApplications) {
         outputFile << application.getJobPosting().getJobPostingcname();
 
         outputFile << " ";
