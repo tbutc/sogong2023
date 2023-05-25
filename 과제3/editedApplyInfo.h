@@ -6,6 +6,12 @@
 
 using namespace std;
 
+struct Date {
+    int year;
+    int month;
+    int day;
+};
+
 class ApplyInfo {
 private:
     string companyName;
