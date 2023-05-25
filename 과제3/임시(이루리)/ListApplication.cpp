@@ -1,4 +1,4 @@
-#include "ApplicationControl"
+#include "ListApplication.h"
 #include <vector>
 #include <iostream>
 #include <fstream>
@@ -19,7 +19,7 @@ vector<Application> Apply::sortApplicationsByCompanyName(vector<Application>& ap
 void Apply::cancelApplication(string& ssn, vector<Application>& applications) {
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         if (it->getRegistrationNumber() == ssn) {
-            // Ãë¼ÒµÈ Áö¿ø Á¤º¸ Ãâ·Â
+            // ÃƒÃ«Â¼Ã’ÂµÃˆ ÃÃ¶Â¿Ã¸ ÃÂ¤ÂºÂ¸ ÃƒÃ¢Â·Ã‚
             ofstream outputFile("output.txt", ios::app);
             outputFile << it->getCompanyName() << " ";
             outputFile << it->getRegistrationNumber() << " ";
