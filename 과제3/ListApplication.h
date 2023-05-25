@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <vector>
 #include "Apply.h"
+#include "ApplicationUI.h"
 #include <ctime>
 
 class ListApplication
