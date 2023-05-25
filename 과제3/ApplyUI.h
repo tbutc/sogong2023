@@ -7,5 +7,5 @@ private:
 
 public:
     ApplyUI();
-    void showInterface(JobPosting jobposting);
+    string showInterface(ifstream& inputFile);
 };

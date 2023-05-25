@@ -9,5 +9,5 @@ using namespace std;
 class Apply
 {
 public:
-    vector<Application> start(string ssn, vector<JobPosting> jobPostings);
+    Application* start(string id, ifstream& inputFile, vector<JobPosting> * jobPostings);
 };

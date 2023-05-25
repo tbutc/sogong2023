@@ -3,28 +3,30 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include "JobPosting.h"
+#include "ApplyUI.h"
+#include "Application.h"
 using namespace std;
 
 
-/*
-    함수 이름 : Apply::start
-    기능	  : 사업자 번호와 채용 정보 목록을 전달받아 일치하는 채용 정보에 대한 지원정보값을 반환
-    전달 인자 : ssn, jobPosting
-    반환값    : Application 객체의 벡터 (vector<Application> applications)
-*/
-vector<Application> Apply::start(string ssn, vector<JobPosting> jobPostings) {
-    vector<Application> applications;
-    for (auto& posting : jobPostings) {
-        if (ssn == posting.getJobPostingssn()) {
-            string companyName = posting.getJobPostingcname();
-            string registrationNumber = posting.getJobPostingssn();
-            string jobTitle = posting.getJobPostingDetail().JobTitle;
-            int applicantLimit = posting.getJobPostingDetail().applicantLimit;
-            string deadline = posting.getJobPostingDetail().deadline;
 
-            Application application(posting, ssn);
-            applications.push_back(application);
+
+Application* Apply::start(string id, ifstream& inputFile, vector<JobPosting> * jobPostings) {
+    
+    ApplyUI a;
+    string ssn = a.showInterface(inputFile);
+
+    //매칭 잡포스팅 찾기
+    JobPosting* matching_posting = nullptr; // 일치하는 채용정보를 저장할 포인터
+
+    for (auto& posting : *jobPostings) {
+        if (posting.getJobPostingssn() == ssn) {
+            matching_posting = &posting; // 일치하는 채용정보를 matching_posting에 저장
+            break; // 일치하는 정보를 찾았으므로 반복문 종료
         }
     }
-    return applications;
+
+    Application * newApp = new Application(*matching_posting, id);
+    
+    return newApp;
 }
