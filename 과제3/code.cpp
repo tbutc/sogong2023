@@ -10,6 +10,7 @@
 #include "LogStatus.h"
 #include "Logout.h"
 #include "memWithdraw.h"
+#include "AddJobPosting.h"
 #include "ListJobPosting.h"
 #include "Application.h"
 #include "SummingUp.h"
@@ -49,6 +50,7 @@ void doTask()
     int is_program_exit = 0;
 
     vector <User> user_list;
+    vector <JobPosting> jobpostings;
     vector<Application> Applications;
 
     ifstream inputFile("input.txt");
@@ -124,6 +126,7 @@ void doTask()
             {
             case 1: // "3.1. 채용 정보 등록"
             {
+                AddJobPosting(inputFile, logged_user.getname(), logged_user.getid(), logged_user.getssn(), jobpostings);
                 break;
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
