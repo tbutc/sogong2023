@@ -16,6 +16,7 @@ private:
 public:
     bool GetCorrespond();
 
+    int getusertype() const;
     string getname() const;
     string getssn() const;
     string getid() const;
