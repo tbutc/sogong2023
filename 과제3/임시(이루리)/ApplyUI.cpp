@@ -1,8 +1,6 @@
-#include <iostream>
-#include <string>
+﻿#include <iostream>
 #include <cstdio>
 #include <fstream>
-#include <vector>
 #include "ApplyUI.h"
 
 using namespace std;
@@ -30,41 +28,41 @@ void ApplyUI::showInterface(JobPosting jobposting) {
 
 }
 
-void ApplyUI::showSortedApplications( vector<Application>& sortedApplications) {
-    ofstream outputFile("output.txt", ios::app);
-    string message = "4.3 지원정보 조회:\n";
+void ApplyUI::showSortedApplications( vector<Application> sortedApplications) {
+    ofstream outputFile("output.txt", std::ios::app);
+    outputFile << "\n4.3 지원정보 조회:\n";
 
-    for ( Application& application : sortedApplications) {
-        message = application.getCompanyName();
-        outputFile << message;
-        outputFile << " ";
+    for ( auto application : sortedApplications) {
+        outputFile << application.getJobPosting().getJobPostingcname();
 
-        message = application.getRegistrationNumber();
-        outputFile << message;
-        outputFile << " ";
 
-        message = application.getJobTitle();
-        outputFile << message;
+
+
         outputFile << " ";
 
-        message = application.getApplicantLimit();
-        outputFile << message;
+
+        outputFile << application.getJobPosting().getJobPostingssn();
         outputFile << " ";
 
-        message = application.getDeadline().year, "-";
-        outputFile << message;
+        outputFile << application.getJobPosting().getJobPostingDetail().JobTitle;
         outputFile << " ";
-        message = application.getDeadline().month, "-";
-        outputFile << message;
+
+        outputFile << application.getJobPosting().getJobPostingDetail().applicantLimit;
         outputFile << " ";
-        message = application.getDeadline().day, "-";
-        outputFile << message;
+
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline.year, "-";
+        outputFile << " ";
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline.month, "-";
+        outputFile << " ";
+        outputFile << application.getJobPosting().getJobPostingDetail().deadline.day, "-";
         outputFile << " ";
     }
     outputFile.close();
 }
 
+/*
 void ApplyUI::PrintcancelApplication(string& ssn, vector<Application>& applications) {
     Apply apply;
     apply.cancelApplication(ssn, applications);
 }
+*/

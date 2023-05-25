@@ -1,22 +1,25 @@
 #include "ListApplication.h"
-#include <vector>
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-using namespace std;
 
 
-bool compareByCompanyName(Application& a, Application& b) {
-    return a.getCompanyName() < b.getCompanyName();
-}
+ListApplication::ListApplication() {}
 
-vector<Application> Apply::sortApplicationsByCompanyName(vector<Application>& applications) {
+ListApplication::ListApplication(vector<Application> applications)
+{
     vector<Application> sortedApplications = applications;
-    sort(sortedApplications.begin(), sortedApplications.end(), compareByCompanyName);
-    return sortedApplications;
+    sort(sortedApplications.begin(), sortedApplications.end(), ListApplication::compareByCompanyName);
+    ApplyUI().showSortedApplications(sortedApplications);
 }
 
-void Apply::cancelApplication(string& ssn, vector<Application>& applications) {
+
+bool ListApplication::compareByCompanyName(Application a, Application b) {
+    return a.getJobPosting().getJobPostingcname() < b.getJobPosting().getJobPostingcname();
+}
+
+/*
+void ListApplication::cancelApplication(string ssn, vector<Application> applications) {
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         if (it->getRegistrationNumber() == ssn) {
             // Ãë¼ÒµÈ Áö¿ø Á¤º¸ Ãâ·Â
@@ -31,3 +34,4 @@ void Apply::cancelApplication(string& ssn, vector<Application>& applications) {
         }
     }
 }
+*/

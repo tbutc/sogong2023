@@ -1,12 +1,18 @@
 #pragma once
 #include <cstdio>
 #include <vector>
-#include "Apply.h"
+#include "Application.h"
+#include "ApplyUI.h"
 #include <ctime>
 
-class ApplicationControl
+class ListApplication
 {
+private:
+
 public:
-	vector<Application> sortApplicationsByCompanyName(vector<Application>& applications);
-	void cancelApplication(string& ssn, vector<Application>& applications);
+	ListApplication();
+	ListApplication(vector<Application> applications);
+	static bool compareByCompanyName(Application a, Application b);
+
+	//void cancelApplication(string& ssn, vector<Application>& applications);
 };

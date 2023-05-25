@@ -1,6 +1,7 @@
 ﻿#include "ListJobPosting.h"
 #include "Application.h"
 #include "SummingUp.h"
+#include "ListApplication.h"
 
 int main()
 {
@@ -25,9 +26,9 @@ int main()
 
 
     // JobPosting 객체 생성
-    JobPosting job1(company1, "qqqq", JD1);
-    JobPosting job2(company2, "qqqq", JD2);
-    JobPosting job3(company3, "eeee", JD3);
+    JobPosting job1(company1,"id1", "qqqq", JD1);
+    JobPosting job2(company2, "1d2", "qqqq", JD2);
+    JobPosting job3(company3, "1d3", "eeee", JD3);
 
     vector<JobPosting> jobPostings;
 
@@ -50,11 +51,10 @@ int main()
     Applications.push_back(App4);
     Applications.push_back(App5);
 
-
     ListJobPosting("qqqq", jobPostings);
 
-    cout << "\n\n";
-
     SummingUp("zxcv", 1, Applications);
+
+    ListApplication listApp(Applications);
 
 }
