@@ -6,7 +6,7 @@
 #include "JobPosting.h"
 
 using namespace std;
-
+// 채용정보를 검색하기 위한 SearchJobPostingUI 클래스 정의
 class SearchJobPostingUI
 {
 public:
