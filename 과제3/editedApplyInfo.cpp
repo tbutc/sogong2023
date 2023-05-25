@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 #include <vector>
-//[È¸»çÀÌ¸§] [»ç¾÷ÀÚ¹øÈ£] [¾÷¹«]
-
+//[íšŒì‚¬ì´ë¦„] [ì‚¬ì—…ìë²ˆí˜¸] [ì—…ë¬´]
+#include "JobPosting.h"
 #include "ApplyInfo.h"
 
 ApplyInfo::ApplyInfo(const string& cn, const string& rn, const string& jt, const int& al, const Date& dl)
