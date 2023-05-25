@@ -32,7 +32,7 @@ User * memWithdraw::showResult(vector <User>* user_list, User* logout_user) {
     전달 인자 : user_list, logout_user
     반환값    : User 주소값
 */
-User*  memWithdraw:: withdraw(vector <User>* user_list, User* logout_user) {
+User*  memWithdraw::withdraw(vector <User>* user_list, User* logout_user) {
 	memWithdrawUI a;
 	a.startInterface();
 
