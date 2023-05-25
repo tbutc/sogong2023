@@ -7,13 +7,22 @@
 #include "memWithdraw.h"
 
 void memWithdrawUI::startInterface() {
-    ofstream writeFile;
-    writeFile.open("input.txt");
-    string str = "1.2. È¸¿øÅ»Åð \n> ";
-    writeFile.write(str.c_str(), str.size());
+    ofstream outputFile("output.txt", ios::app);
+
+    string message = "1.2. È¸¿øÅ»Åð \n> ";
+    outputFile << message;
+    outputFile.close();
+
+    return;
 }
 
-void memWithdrawUI::memberWithdraw() {
+User * memWithdrawUI::memberWithdraw(vector <User>* user_list, User* logout_user) {
     memWithdraw a;
-    a.showResult();
+
+    ofstream outputFile("output.txt", ios::app);
+
+    outputFile << logout_user->getid() << endl;
+    outputFile.close();
+
+    return a.showResult(user_list, logout_user);
 }
