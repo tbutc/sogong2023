@@ -18,31 +18,25 @@ using namespace std;
 
 AddJobPostingUI::AddJobPostingUI(){}
  
-void AddJobPostingUI::showInterface(vector<JobDetail> jobdetial) {
+JobDetail AddJobPostingUI::startinterface(ifstream& inputFile)
+{
     ofstream outputFile("output.txt", ios::app);
-    string message = "3.1. 채용 정보 등록\n> ";
-    outputFile << message;
-
-    message = jobdetail.JobTitle;
-    outputFile << message;
-    outputFile << " ";
-
-    message = jobdetail.applicantLimit;
-    outputFile << message;
-    outputFile << " ";
-
-    message = jobdetail.deadline.year;
-    outputFile << message;
-    outputFile << " /";
-
-    message = jobdetail.deadline.month;
-    outputFile << message;
-    outputFile << " /";
-
-    message = jobdetail.deadline.day;
-    outputFile << message;
-    outputFile << " \n";
-
+    outputFile << "3.1. 채용 정보 등록\n> ";
     outputFile.close();
-    
+
+    JobDetail jobdetail;
+    inputFile >> jobdetail.JobTitle;
+    inputFile >> jobdetail.applicantLimit;
+    inputFile >> jobdetail.deadline;
+    return jobdetail;
 }
+
+void AddJobPostingUI::showresult(JobDetail jd)
+{
+    ofstream outputFile("output.txt", ios::app);
+    outputFile << jd.JobTitle << " ";
+    outputFile << jd.applicantLimit << " ";
+    outputFile << jd.deadline << " ";
+    outputFile.close();
+}
+

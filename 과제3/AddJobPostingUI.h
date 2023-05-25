@@ -7,6 +7,6 @@ private:
 
 public:
     AddJobPostingUI();
-    void showInterface(vector<JobDetail> jobdetial);
-    
+    JobDetail startinterface(ifstream& inputFile);
+    void showresult(JobDetail jd);
 };

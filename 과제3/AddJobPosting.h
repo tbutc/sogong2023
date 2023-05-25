@@ -7,14 +7,9 @@ using namespace std;
 class AddJobPosting
 {
 private:
-    
-    string companyName;
-    string jobId;
-    string jobPostingssn;
-    JobDetail jobPostingDetail;
+
 public:
     
-    vector<JobDetail> start(string ssn, vector<JobPosting> jobPostings);
-
-    AddJobPosting(string cn, string id, string ssn, JobDetail jd);
+    AddJobPosting(ifstream& inputFile, string cn, string id, string ssn, vector<JobPosting>& jobPostings);
+    void Add(string cn, string id, string ssn, vector<JobPosting>& jobPostings, JobDetail jd);
 };
