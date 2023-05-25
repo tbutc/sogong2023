@@ -1,4 +1,4 @@
-﻿#include "ListJobPostingUI.h"
+#include "ListJobPostingUI.h"
 
 /*
     함수 이름 : ListJobPostingUI::startinterface()
@@ -20,7 +20,7 @@ void ListJobPostingUI::startinterface(vector<JobDetail> details)
             writeFile << "\n   ";
         }
 
-        writeFile << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline.year << "/" << detail.deadline.month << "/" << detail.deadline.day;
+        writeFile << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline;
 
         isFirst = false;
     }
