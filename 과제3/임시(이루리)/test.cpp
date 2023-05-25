@@ -4,6 +4,9 @@
 
 int main()
 {
+    ofstream writeFile("output.txt");
+    writeFile.open("output.txt");
+    writeFile.close();
 
     // 임시 회사 이름
     string company1 = "aaa";
@@ -23,7 +26,7 @@ int main()
 
     // JobPosting 객체 생성
     JobPosting job1(company1, "qqqq", JD1);
-    JobPosting job2(company2, "wwww", JD2);
+    JobPosting job2(company2, "qqqq", JD2);
     JobPosting job3(company3, "eeee", JD3);
 
     vector<JobPosting> jobPostings;
@@ -37,6 +40,7 @@ int main()
     Application App2(job2, "asdf");
     Application App3(job3, "zxcv");
     Application App4(job3, "zxcv");
+    Application App5(job2, "zxcv");
 
 
     vector<Application> Applications;
@@ -44,9 +48,10 @@ int main()
     Applications.push_back(App2);
     Applications.push_back(App3);
     Applications.push_back(App4);
+    Applications.push_back(App5);
 
 
-    ListJobPosting("aaa", jobPostings);
+    ListJobPosting("qqqq", jobPostings);
 
     cout << "\n\n";
 
