@@ -1,50 +1,28 @@
 #include <iostream>
-using namespace std;
 #include <vector>
-//[회사이름] [사업자번호] [업무]
 #include "Application.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
 #include "User.h"
 #include <fstream>
-
-
+using namespace std;
+/*
+    함수 이름 :Application::Application
+    기능	  : Application 클래스의 생성자. JobPosting객체와 아이디를 전달받아 초기화됨
+    전달 인자 : jp(JobPosting 객체, id)
+    반환값    : 없음
+*/
 Application::Application(JobPosting jp, string id) :
-    applicationRecord(jp), ID(id)
-{
+    applicationRecord(jp), ID(id) {}
 
-}
-
+/*
+    함수 이름 :Application::getJobPosting
+    기능	  : Application 객체에 저장된 채용 정보를 반환합니다.
+    전달 인자 : 없음
+    반환값    : JobPosting 객체 
+*/
 JobPosting Application::getJobPosting() {
     return applicationRecord;
 }
 
-
-/*
-/정렬위해 bool로 비교/
-bool compareJobPosting( JobPosting a,  JobPosting b) {
-    return (a.getJobPostingcname()) < (b.getJobPostingcname());
-}
-/정렬 여기서 getJobposting이랑 getApplication 함수 같이 사용하여 연결. /
-void showSortedApplication( User user,  vector<Application> applications,  vector<JobPosting> jobPostings) {
-    vector<Application> userApplications = getApplication(user, applications);
-    vector<JobPosting> sortedJobPostings;
-    for ( Application application : userApplications) {
-        JobPosting jobPosting = getJobPosting(application, jobPostings);
-        sortedJobPostings.push_back(jobPosting);
-    }
-    sort(sortedJobPostings.begin(), sortedJobPostings.end(), compareJobPosting);
-    ofstream outputFile("output.txt");
-    if (outputFile.is_open()) {
-        for ( JobPosting job : sortedJobPostings) {
-            JobDetail detail = job.getJobPostingDetail();
-            outputFile << (job.getJobPostingcname()) << " " << detail.JobTitle << " " << detail.applicantLimit << " " << detail.deadline.year << "/" << detail.deadline.month << "/" << detail.deadline.day << endl; //사업자 번호 추가
-        }
-        outputFile.close();
-    }
-    else {
-        cout << "파일을 열 수 없습니다." << endl;
-    }
-}
-*/
