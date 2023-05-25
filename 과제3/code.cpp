@@ -6,12 +6,13 @@
 #include <fstream>
 
 #include "ListJobPostingUI.h"
-#include "ListApplication.h"
+
 #include "User.h"
 #include "SignUp.h"
 #include "Login.h"
 #include "LogStatus.h"
 #include "Logout.h"
+#include "memWithdraw.h"
 
 
 using namespace std;
@@ -29,7 +30,6 @@ void doTask();
 FILE* in_fp, * out_fp;
 
 
-
 int main()
 {
     doTask();
@@ -40,18 +40,23 @@ int main()
 void doTask()
 {
     LogStatus* logstatus = new LogStatus();
+    User* logged_user = nullptr;
 
     logstatus->change_log_user(nullptr);
     logstatus->deactivate();
-    
 
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
     vector <User> user_list;
-    vector<Application> applications;
-    
+
     ifstream inputFile("input.txt");
+
+    Login in;
+    Logout out;
+    SignUp up;
+    memWithdraw mW;
+
 
     while (!is_program_exit)
     {
@@ -69,13 +74,15 @@ void doTask()
             {
             case 1: // "1.1. 회원가입“ 메뉴 부분
             {
-                SignUp a;
-                user_list.push_back(a.join(inputFile));
+                
+                user_list.push_back(up.join(inputFile));
 
                 break;
             }
             case 2: // "1.2. 회원탈퇴"
             {
+                User * del_user = mW.withdraw(&user_list, logged_user);
+                user_list.erase(remove(user_list.begin(), user_list.end(), *del_user), user_list.end());
 
                 break;
             }
@@ -88,8 +95,7 @@ void doTask()
             {
             case 1: // "2.1. 로그인"
             {
-                Login a;
-                User* logged_user = a.log_in(inputFile, &user_list); //log_in 함수 실행하여 반환값을 logged_user에 저장
+                logged_user = in.log_in(inputFile, &user_list); //log_in 함수 실행하여 반환값을 logged_user에 저장
 
                 logstatus->change_log_user(logged_user);
                 if (logstatus->get_log_user() != nullptr) { logstatus->activate(); }
@@ -102,8 +108,7 @@ void doTask()
 
                 logstatus->deactivate();
 
-                Logout a;
-                User logout_user = *a.log_out(&user_list, logstatus->get_log_user()); // control 함수인 log_out 실행
+                User logout_user = *out.log_out(&user_list, logged_user); // control 함수인 log_out 실행
 
                 break;
             }
@@ -127,7 +132,7 @@ void doTask()
             break;
         }
 
-            case 4:
+        case 4:
         {
             switch (menu_level_2)
             {
@@ -137,19 +142,6 @@ void doTask()
             }
             case 2:
             {
-                break;
-            }
-            case 3: // 4.3. 지원 정보 조회
-            {
-                ApplicationUI applicationUI;
-                applicationUI.showSortedApplications(applications);
-                break;
-            }
-            case 4: // 4.4. 지원 취소
-            {
-                ApplicationUI applicationUI;
-                string ssn;
-                applicationUI.PrintcancelApplication(ssn, applications);
                 break;
             }
             }
