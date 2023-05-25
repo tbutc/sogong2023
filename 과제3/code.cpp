@@ -183,6 +183,12 @@ void doTask()
     return;
 }
 
+/*
+    함수 이름 : program_exit
+    기능	  : do_task 함수 종료시키기
+    전달 인자 : inputFile
+    반환값    : UserType - 1이면 일반회원, 2이면 회사회원
+*/
 void program_exit(ifstream& inputFile) {
     ofstream outputFile("output.txt", ios::app);
     outputFile << "6.1. 종료"<< endl;
