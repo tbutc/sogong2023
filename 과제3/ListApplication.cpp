@@ -24,7 +24,7 @@ void ListApplication::cancelApplication(string ssn, vector<Application> applicat
             ofstream outputFile("output.txt", ios::app);
             outputFile << it->getJobPosting().getJobPostingcname() << " ";
             outputFile << it->getJobPosting().getJobPostingssn() << " ";
-            outputFile << it->getJobPosting().getJobPostingDetail().JobTitle << " (\n";
+            outputFile << it->getJobPosting().getJobPostingDetail().JobTitle << "\n";
             outputFile.close();
 
             applications.erase(it);
