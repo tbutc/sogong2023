@@ -12,10 +12,10 @@
 #include "SearchJobPostingUI.h"
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : SearchJobPostingUI::startinterface(JobPosting jobposting)
-    ±â´É     : Ã¤¿ëÁ¤º¸Á¶È¸ UI¸¦ Ç¥½ÃÇÏ´Â ÇÔ¼ö
-    Àü´Ş ÀÎÀÚ : details -> Ã¤¿ë¼¼ºÎÁ¤º¸ ÁıÇÕ
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : SearchJobPostingUI::startinterface(JobPosting jobposting)
+    ê¸°ëŠ¥     : ì±„ìš©ì •ë³´ì¡°íšŒ UIë¥¼ í‘œì‹œí•˜ëŠ” í•¨ìˆ˜
+    ì „ë‹¬ ì¸ì : details -> ì±„ìš©ì„¸ë¶€ì •ë³´ ì§‘í•©
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 using namespace std;
@@ -26,7 +26,7 @@ string SearchJobPostingUI::startInterface(ifstream& inputFile) {
     
 
     ofstream outputFile("output.txt", ios::app);
-    string message = "4.1. Ã¤¿ë Á¤º¸ °Ë»ö\n> ";
+    string message = "4.1. ì±„ìš© ì •ë³´ ê²€ìƒ‰\n> ";
     outputFile << message;
 
     outputFile.close();
@@ -37,6 +37,13 @@ string SearchJobPostingUI::startInterface(ifstream& inputFile) {
     return cn;
 
 }
+/*
+í•¨ìˆ˜ ì´ë¦„: SearchJobPostingUI::startInterface2
+ê¸°ëŠ¥: ì±„ìš© ì •ë³´ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+ì „ë‹¬ ì¸ì: posting -> ê²€ìƒ‰ëœ ì±„ìš© ì •ë³´ë¥¼ ê°€ë¦¬í‚¤ëŠ” JobPosting ê°ì²´ì˜ í¬ì¸í„°
+ë°˜í™˜ê°’: ì—†ìŒ
+*/
+
 
 void SearchJobPostingUI::startInterface2(JobPosting* posting) {
 
