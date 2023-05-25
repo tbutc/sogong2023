@@ -7,7 +7,7 @@
 
 ListApplication::ListApplication() {}
 
-ListApplication::ListApplication(vector<Application>& applications)
+ListApplication::ListApplication(vector<Application> &applications)
 {
     vector<Application> sortedApplications = applications;
     sort(sortedApplications.begin(), sortedApplications.end(), ListApplication::compareByCompanyName);
@@ -20,11 +20,11 @@ bool ListApplication::compareByCompanyName(Application a, Application b) {
 }
 void ListApplication::cancelApplication(string ssn, vector<Application> applications) {
     for (auto it = applications.begin(); it != applications.end(); ++it) {
-        if (it->getRegistrationNumber() == ssn) {
+        if (it->getJobPosting().getJobPostingssn() == ssn) {
             ofstream outputFile("output.txt", ios::app);
-            outputFile << it->getCompanyName() << " ";
-            outputFile << it->getRegistrationNumber() << " ";
-            outputFile << it->getJobTitle() << " (\n";
+            outputFile << it->getJobPosting().getJobPostingcname() << " ";
+            outputFile << it->getJobPosting().getJobPostingssn() << " ";
+            outputFile << it->getJobPosting().getJobPostingDetail().JobTitle << " (\n";
             outputFile.close();
 
             applications.erase(it);
