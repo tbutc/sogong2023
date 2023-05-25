@@ -1,13 +1,13 @@
-#include <string>
+#include <cstdio>
 #include <vector>
-#include "JobPosting.h"
+#include "Application.h"
+
+#include <ctime>
 
 using namespace std;
 
 class Apply
 {
 public:
-    vector<JobDetail> start(string ssn, vector<JobPosting> jobPostings);
-    
-
-}; 
+    vector<Application> start(string ssn, vector<JobPosting> jobPostings);
+};
