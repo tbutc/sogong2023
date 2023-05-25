@@ -12,7 +12,7 @@ ApplyUI::ApplyUI() {}
 
 void ApplyUI::showInterface(JobPosting jobposting) {
     ofstream outputFile("output.txt", ios::app);
-    string message = "4.2. Ã¤¿ë Áö¿ø\n> ";
+    string message = "4.2. ì±„ìš© ì§€ì›\n> ";
     outputFile << message;
 
     message = jobposting.getJobPostingcname();
@@ -33,7 +33,7 @@ void ApplyUI::showInterface(JobPosting jobposting) {
 
 void ApplyUI::showSortedApplications(const vector<ApplyInfo>& sortedApplications) {
     ofstream outputFile("output.txt", ios::app);
-    string message= "4.3 Áö¿øÁ¤º¸ Á¶È¸:\n";
+    string message= "4.3 ì§€ì›ì •ë³´ ì¡°íšŒ:\n";
 
     for (const ApplyInfo& application : sortedApplications) {
         message=application.getCompanyName();
