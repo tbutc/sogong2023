@@ -9,9 +9,9 @@
 
 using namespace std;
 
-class Login
+class Logout
 {
 public:
-    User * showResult(string& id, string& pwd, vector <User>* user_list);
-    User * log_in(ifstream& inputFile, vector <User>* user_list);
+    User* showResult(vector <User>* user_list, User* logout_user);
+    User* log_out(vector <User>* user_list, User* logout_user);
 };

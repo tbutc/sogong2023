@@ -7,5 +7,5 @@ private:
 
 public:
     void startInterface();
-    void LoginRequest(ifstream& inputFile, vector <User>* user_list);
+    User * LoginRequest(ifstream& inputFile, vector <User>* user_list);
 };
