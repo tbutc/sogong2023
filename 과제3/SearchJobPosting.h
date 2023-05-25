@@ -9,6 +9,5 @@ using namespace std;
 class SearchJobPosting
 {
 public:
-    void getJobPostingdetail();
-    vector<JobDetail> JobPostingdetail(string cn, vector<JobPosting> jobPostings);
+    void searchpost(ifstream& inputFile, vector <JobPosting>* jobpostings);
 }; 

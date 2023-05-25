@@ -23,5 +23,8 @@ User * memWithdraw::showResult(vector <User>* user_list, User* logout_user) {
 User*  memWithdraw:: withdraw(vector <User>* user_list, User* logout_user) {
 	memWithdrawUI a;
 	a.startInterface();
+
+	//~User
+
 	return a.memberWithdraw(user_list, logout_user);
 }

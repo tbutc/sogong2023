@@ -10,6 +10,6 @@ using namespace std;
 class SearchJobPostingUI
 {
 public:
-    SearchJobPostingUI();
-    void startInterface(JobPosting jobposting);
+    string startInterface(ifstream& inputFile);
+    void startInterface2(JobPosting* posting);
 };

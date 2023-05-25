@@ -22,38 +22,30 @@ using namespace std;
 
 SearchJobPostingUI::SearchJobPostingUI() {}
 
-void SearchJobPostingUI::startInterface(JobPosting jobposting) {
+string SearchJobPostingUI::startInterface(ifstream& inputFile) {
+    
+
     ofstream outputFile("output.txt", ios::app);
     string message = "4.1. 채용 정보 검색\n> ";
     outputFile << message;
 
-    message = jobposting.getJobPostingcname();
-    outputFile << message;
-    outputFile << " ";
+    outputFile.close();
 
-    message = jobposting.getJobPostingssn();
-    outputFile << message;
-    outputFile << " ";
+    string cn;
+    inputFile >> cn;
 
-    message = jobposting.getJobPostingDetail().JobTitle;
-    outputFile << message;
-    outputFile << " ";
+    return cn;
 
-    message = jobposting.getJobPostingDetail().applicantLimit;
-    outputFile << message;
-    outputFile << " ";
+}
 
-    message = jobposting.getJobPostingDetail().deadline.year;
-    outputFile << message;
-    outputFile << " /";
+void SearchJobPostingUI::startInterface2(JobPosting* posting) {
 
-    message = jobposting.getJobPostingDetail().deadline.month;
-    outputFile << message;
-    outputFile << " /";
+    ofstream outputFile("output.txt", ios::app);
 
-    message = jobposting.getJobPostingDetail().deadline.day;
-    outputFile << message;
-    outputFile << " \n";
+    outputFile << posting->getJobPostingcname() << " " << posting->getJobPostingssn() << " ";
+    outputFile << posting->getJobPostingDetail().JobTitle << " ";
+    outputFile << posting->getJobPostingDetail().applicantLimit << " ";
+    outputFile << posting->getJobPostingDetail().deadline << endl;
 
     outputFile.close();
 
