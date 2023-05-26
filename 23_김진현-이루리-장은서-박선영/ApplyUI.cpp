@@ -30,7 +30,12 @@ string ApplyUI::showInterface(ifstream& inputFile) {
 
     return ssn;
 }
-
+/*
+함수 이름: ApplyUI::showresult
+기능: JobPosting 객체의 정보를 파일에 출력
+전달 인자: JobPosting* jp -> 출력할 JobPosting 객체에 대한 포인터
+반환값: 없음
+*/
 void ApplyUI::showresult(JobPosting* jp)
 {
     ofstream outputFile("output.txt", ios::app);
