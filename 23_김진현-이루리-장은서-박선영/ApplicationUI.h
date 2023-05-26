@@ -3,7 +3,7 @@
 #include "Apply.h"
 #include <ctime>
 
-//ApplicationUI 클래스정의
+//정렬과 취소를 위한 ApplicationUI 클래스정의
 class ApplicationUI
 {
 private:
