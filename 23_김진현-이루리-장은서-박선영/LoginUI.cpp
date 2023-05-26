@@ -46,27 +46,25 @@ User * LoginUI::LoginRequest(ifstream& inputFile, vector <User>* user_list) {
 
     User* corr_user= a.showResult(id, pwd, user_list);
 
+    ofstream outputFile("output.txt", ios::app);
 
     if (corr_user!=nullptr) {
         LogStatus a;
         a.change_log_user(corr_user);
         a.activate();
         
-        ofstream outputFile("output.txt", ios::app);
         outputFile << corr_user->getid() << ' ';
         outputFile << corr_user->getpwd() << endl;
 
-        outputFile.close();
 
         return corr_user; //로그인 성공
     }
 
     else {
-        ofstream outputFile("output.txt", ios::app);
         outputFile << "아이디, 비밀번호가 일치하지 않습니다" << endl;
-        outputFile.close();
 
         return nullptr;
     }
     
+    outputFile.close();
 }

@@ -1,4 +1,4 @@
-// 헤더 선언
+﻿// 헤더 선언
 #include <stdio.h>
 #include <string.h>
 #include <string>
@@ -12,10 +12,12 @@
 #include "memWithdraw.h"
 #include "AddJobPosting.h"
 #include "ListJobPosting.h"
-//#include "Application.h"
+#include "Application.h"
 #include "SearchJobPosting.h"
-//#include "SummingUp.h"
-//#include "ListApplication.h"
+#include "Apply.h"
+#include "SummingUp.h"
+#include "ListApplication.h"
+#include "ApplicationUI.h"
 
 using namespace std;
 
@@ -52,16 +54,17 @@ void doTask()
 
     vector <User> user_list;
     vector <JobPosting> jobpostings;
-    //vector<Application> Applications;
+    vector<Application> Applications;
 
     ifstream inputFile("input.txt");
 
     Login in;
     Logout out;
     SignUp up;
-    //ApplicationUI applicationUI;
+    ApplicationUI applicationUI;
     memWithdraw mW;
     SearchJobPosting SJ;
+    Apply ap;
 
     while (!is_program_exit)
     {
@@ -82,12 +85,16 @@ void doTask()
 
                 user_list.push_back(up.join(inputFile));
 
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             case 2: // "1.2. 회원탈퇴"
             {
                 User* del_user = mW.withdraw(&user_list, logged_user);
 
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             }
@@ -104,6 +111,8 @@ void doTask()
                 logstatus->change_log_user(logged_user);
                 if (logstatus->get_log_user() != nullptr) { logstatus->activate(); }
 
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
 
             }
@@ -114,6 +123,8 @@ void doTask()
 
                 User logout_user = *out.log_out(&user_list, logged_user); // control 함수인 log_out 실행
 
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             }
@@ -127,11 +138,17 @@ void doTask()
             case 1: // "3.1. 채용 정보 등록"
             {
                 AddJobPosting(inputFile, logged_user->getname(), logged_user->getid(), logged_user->getssn(), jobpostings);
+
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             case 2: // "3.2. 등록된 채용 정보 조회"
             {
                 ListJobPosting(logged_user->getssn(), jobpostings);
+
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             }
@@ -145,22 +162,31 @@ void doTask()
             case 1:
             {
                 SJ.searchpost(inputFile, &jobpostings);
+
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             case 2:
             {
+                Application  AP = *ap.start(logged_user->getid(), inputFile, &jobpostings);
+                Applications.push_back(AP);
+
                 break;
             }
             case 3: // 4.3. 지원 정보 조회
             {
-                //applicationUI.showSortedApplications(Applications);
+                applicationUI.showSortedApplications(Applications);
                 break;
             }
             case 4: // 4.4. 지원 취소
             {
-                //string ssn;
-                //inputFile >> ssn;
-                //applicationUI.PrintcancelApplication(ssn, Applications);
+                string ssn;
+                inputFile >> ssn;
+                applicationUI.PrintcancelApplication(ssn, Applications);
+
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             }
@@ -173,7 +199,10 @@ void doTask()
             {
             case 1: //"5.1. 지원 정보 통계"
             {
-                //SummingUp(logged_user.getid(), logged_user.getusertype(), Applications);
+                SummingUp(logged_user->getid(), logged_user->getusertype(), Applications);
+
+                ofstream outputFile("output.txt", ios::app);
+                outputFile << endl;
                 break;
             }
             case 2:
