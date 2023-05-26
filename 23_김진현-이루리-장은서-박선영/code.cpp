@@ -205,12 +205,6 @@ void doTask()
                 outputFile << endl;
                 break;
             }
-            case 2:
-            {
-                break;
-            }
-            }
-            break;
         }
 
 
