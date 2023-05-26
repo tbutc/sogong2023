@@ -159,7 +159,7 @@ void doTask()
         {
             switch (menu_level_2)
             {
-            case 1:
+            case 1: //채용정보검색
             {
                 SJ.searchpost(inputFile, &jobpostings);
 
@@ -167,7 +167,7 @@ void doTask()
                 outputFile << endl;
                 break;
             }
-            case 2:
+            case 2: //채용 지원
             {
                 Application  AP = *ap.start(logged_user->getid(), inputFile, &jobpostings);
                 Applications.push_back(AP);
