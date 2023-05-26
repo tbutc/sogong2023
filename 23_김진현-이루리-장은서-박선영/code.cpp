@@ -159,7 +159,7 @@ void doTask()
         {
             switch (menu_level_2)
             {
-            case 1: //채용정보검색
+            case 1: //"4.1. 채용 정보 검색"
             {
                 SJ.searchpost(inputFile, &jobpostings);
 
@@ -167,19 +167,19 @@ void doTask()
                 outputFile << endl;
                 break;
             }
-            case 2: //채용 지원
+            case 2: //"4.2. 채용 지원"
             {
                 Application  AP = *ap.start(logged_user->getid(), inputFile, &jobpostings);
                 Applications.push_back(AP);
 
                 break;
             }
-            case 3: // 4.3. 지원 정보 조회
+            case 3: // "4.3. 지원 정보 조회"
             {
                 applicationUI.showSortedApplications(Applications);
                 break;
             }
-            case 4: // 4.4. 지원 취소
+            case 4: // "4.4. 지원 취소"
             {
                 string ssn;
                 inputFile >> ssn;
