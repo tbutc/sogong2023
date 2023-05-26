@@ -35,6 +35,13 @@ string SearchJobPostingUI::startInterface(ifstream& inputFile) {
     return searchjobposting(inputFile);
 }
 
+/*
+함수 이름: SearchJobPostingUI::searchjobposting
+기능: 채용 정보 검색을 위해 회사 이름을 입력받는 기능
+전달 인자: ifstream& inputFile -> 입력 파일 스트림에 대한 참조
+반환값: string -> 회사이름
+*/
+
 string SearchJobPostingUI::searchjobposting(ifstream& inputFile) {
 
     string cn;
@@ -47,7 +54,7 @@ string SearchJobPostingUI::searchjobposting(ifstream& inputFile) {
 
 
 /*
-함수 이름: SearchJobPostingUI::startInterface2
+함수 이름: SearchJobPostingUI::showresult
 기능: 채용 정보 결과를 출력하는 함수
 전달 인자: posting -> 검색된 채용 정보를 가리키는 JobPosting 객체의 포인터
 반환값: 없음
