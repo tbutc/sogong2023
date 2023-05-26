@@ -3,6 +3,7 @@
 #include "Apply.h"
 #include <ctime>
 
+//ApplicationUI 클래스정의
 class ApplicationUI
 {
 private:
