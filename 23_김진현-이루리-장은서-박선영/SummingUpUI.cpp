@@ -13,14 +13,12 @@ void SummingUpUI::startinterface(map<string, int> applicant)
 	writeFile << "\n5.1. 지원 정보 통계 \n> ";
 
 	bool isFirst = true;
-	cout << "hello";
 	for ( auto ap : applicant)
 	{
 		if (!isFirst)
 		{
 			writeFile << "\n   ";
 		}
-		cout << "hi";
 		writeFile << ap.first << ": " << ap.second;
 
 		isFirst = false;

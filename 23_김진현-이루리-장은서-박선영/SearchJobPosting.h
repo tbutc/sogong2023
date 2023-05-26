@@ -11,4 +11,4 @@ class SearchJobPosting
 {
 public:
     void searchpost(ifstream& inputFile, vector <JobPosting>* jobpostings);
-}; 
+};

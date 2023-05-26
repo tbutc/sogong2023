@@ -39,7 +39,6 @@ void LogoutUI::startInterface() {
 User * LogoutUI::LogoutRequest(vector <User>* user_list, User* logout_user) {
 
     ofstream outputFile("output.txt", ios::app);
-    if (logout_user == NULL)cout << "n..";
     outputFile << logout_user->getid() << endl;
     outputFile.close();
 

@@ -11,17 +11,17 @@
 #include "JobPosting.h"
 #include "SearchJobPostingUI.h"
 
+
+using namespace std;
+
+SearchJobPostingUI::SearchJobPostingUI() {}
+
 /*
     함수 이름 : SearchJobPostingUI::startinterface(JobPosting jobposting)
     기능     : 채용정보조회 UI를 표시하는 함수
     전달 인자 : details -> 채용세부정보 집합
     반환값    : 없음
 */
-
-using namespace std;
-
-SearchJobPostingUI::SearchJobPostingUI() {}
-
 string SearchJobPostingUI::startInterface(ifstream& inputFile) {
     
 
@@ -31,12 +31,21 @@ string SearchJobPostingUI::startInterface(ifstream& inputFile) {
 
     outputFile.close();
 
+
+    return searchjobposting(inputFile);
+}
+
+string SearchJobPostingUI::searchjobposting(ifstream& inputFile) {
+
     string cn;
     inputFile >> cn;
 
     return cn;
-
 }
+
+
+
+
 /*
 함수 이름: SearchJobPostingUI::startInterface2
 기능: 채용 정보 결과를 출력하는 함수

@@ -11,7 +11,7 @@ using namespace std;
 반환값: 없음
 */
 void SearchJobPosting::searchpost(ifstream& inputFile, vector <JobPosting>* jobpostings) {
-	
+
 	SearchJobPostingUI a;
 	string cn = a.startInterface(inputFile);
 	JobPosting* matching_posting = nullptr; // 일치하는 채용정보를 저장할 포인터
@@ -24,7 +24,6 @@ void SearchJobPosting::searchpost(ifstream& inputFile, vector <JobPosting>* jobp
 	}
 	a.showresult(matching_posting);
 }
-
 
 
 

@@ -12,5 +12,6 @@ class SearchJobPostingUI
 public:
     SearchJobPostingUI();
     string startInterface(ifstream& inputFile);
+    string searchjobposting(ifstream& inputFile);
     void showresult(JobPosting* posting);
 };
