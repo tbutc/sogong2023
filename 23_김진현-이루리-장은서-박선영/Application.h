@@ -3,7 +3,7 @@
 #include "JobPosting.h"
 #include "User.h"
 
-//Application 클래스정의
+//지원 관련 정보 저장을 위한 Application 클래스정의
 class Application {
 private:
     JobPosting applicationRecord;
